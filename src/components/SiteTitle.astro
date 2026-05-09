@@ -1,0 +1,42 @@
+---
+const { siteTitle, siteTitleHref } = Astro.locals.starlightRoute;
+import { BASE_PATH } from "../../site-config.mjs";
+---
+
+<a href={siteTitleHref} class="site-title sl-flex">
+	<img
+		src={`${BASE_PATH}/assets/android-chrome-192x192.png`}
+		alt="License Server"
+		class="license-navbar-logo"
+		width="42px"
+		height="42px"
+	/>
+	<span translate="no">{siteTitle}</span>
+</a>
+
+<style>
+	@layer starlight.core {
+		.site-title {
+			align-items: center;
+			gap: var(--sl-nav-gap);
+			font-size: var(--sl-text-h4);
+			font-weight: 600;
+			color: var(--sl-color-text-accent);
+			text-decoration: none;
+			white-space: nowrap;
+			min-width: 0;
+		}
+
+		.site-title span:last-child {
+			overflow: hidden;
+		}
+
+		.license-navbar-logo {
+			display: block;
+			flex: 0 0 auto;
+			width: calc(var(--sl-nav-height) - 2 * var(--sl-nav-pad-y));
+			height: calc(var(--sl-nav-height) - 2 * var(--sl-nav-pad-y));
+			object-fit: contain;
+		}
+	}
+</style>

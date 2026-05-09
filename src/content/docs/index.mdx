@@ -1,0 +1,34 @@
+---
+title: Welcome to Documentation Boilerplate
+description: A starting point for creating beautiful documentation using Astro Starlight.
+template: splash
+hero:
+  tagline: Kickstart your technical documentation with custom components, dark mode optimizations, and Github Pages deployment built-in.
+  image:
+    file: ~/assets/license-server-logo-1024x1024.png
+  actions:
+    - text: Get Started
+      link: ./getting-started/installation/
+      icon: right-arrow
+      variant: primary
+    - text: View GitHub Template
+      link: https://github.com/
+      icon: external
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+<CardGrid stagger>
+	<Card title="Pre-configured Styles" icon="pencil">
+		Comes with customized typography, dark mode specific overrides, and a rich aesthetic tailored for professional documentation.
+	</Card>
+	<Card title="GitHub Pages Ready" icon="rocket">
+		Includes a reliable GitHub Actions workflow that builds your documentation using PNPM and automatically deploys to GitHub Pages.
+	</Card>
+	<Card title="Custom Components" icon="setting">
+		Override Starlight defaults out of the box. Includes modified SiteTitle, ThemeProvider, and social icon configurations.
+	</Card>
+	<Card title="SEO & Performance" icon="open-book">
+		Fully leverages Astro's static site generation and includes optimized meta tags, sitemaps, and robots.txt.
+	</Card>
+</CardGrid>
