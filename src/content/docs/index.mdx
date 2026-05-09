@@ -5,18 +5,23 @@ template: splash
 hero:
   tagline: Kickstart your technical documentation with custom components, dark mode optimizations, and Github Pages deployment built-in.
   image:
-    file: ~/assets/license-server-logo-1024x1024.png
+    file: ~/assets/wpanchorbay-icon.png
   actions:
     - text: Get Started
-      link: ./getting-started/installation/
+      link: /documentation-boilerplate-starlight/getting-started/installation/
       icon: right-arrow
       variant: primary
     - text: View GitHub Template
       link: https://github.com/
       icon: external
+      variant: minimal
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
+import HeroTitleEffect from '../../components/HeroTitleEffect.astro';
+import WPAnchorBayFooter from '../../components/WPAnchorBayFooter.astro';
+
+<HeroTitleEffect />
 
 <CardGrid stagger>
 	<Card title="Pre-configured Styles" icon="pencil">
@@ -32,3 +37,5 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 		Fully leverages Astro's static site generation and includes optimized meta tags, sitemaps, and robots.txt.
 	</Card>
 </CardGrid>
+
+<WPAnchorBayFooter />

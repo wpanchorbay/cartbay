@@ -1,8 +1,8 @@
----
 import Icon from "./Icon.astro";
 import { Image } from "astro:assets";
 import config from "virtual:starlight/user-config";
-import wpanchorbayIcon from "../../assets/wpanchorbay-icon.png";
+import wpanchorbayIcon from "../../assets/wpanchorbay-icon.svg";
+import { WPANCHORBAY_URL } from "../../../site-config.mjs";
 
 const { social } = config;
 
@@ -32,7 +32,7 @@ const links = social
 		</a>
 	))
 }
-<a href="https://wpanchorbay.com/" rel="me" class="sl-flex custom-social-link">
+<a href={WPANCHORBAY_URL} rel="me" class="sl-flex custom-social-link">
 	<span class="sr-only">WPAnchorBay</span>
 	<Image src={wpanchorbayIcon} alt="" width={24} height={24} />
 </a>
