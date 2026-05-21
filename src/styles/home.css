@@ -118,9 +118,12 @@ a:hover {
 }
 
 [data-has-hero] .hero {
+	display: grid;
+	grid-template-columns: 1fr;
 	gap: clamp(2rem, 6vw, 5rem);
 	position: relative;
 	isolation: isolate;
+	align-items: center;
 }
 
 html[data-has-hero] body {
@@ -175,17 +178,12 @@ html[data-has-hero] body {
 }
 
 [data-has-hero] [data-page-title] {
-	min-width: calc(var(--license-title-chars, 14) * 0.58em);
-	white-space: nowrap;
+	min-width: 0;
+	white-space: normal;
+	word-break: break-word;
 }
 
-[data-has-hero] [data-license-title-effect-active='true'] {
-	color: #5765f2;
-	letter-spacing: 0.02em;
-	transition:
-		color 180ms ease,
-		letter-spacing 180ms ease;
-}
+
 
 :root {
 	--license-nav-bg: color-mix(in srgb, var(--sl-color-bg-nav) 76%, transparent);
