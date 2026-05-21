@@ -7,6 +7,11 @@ a:hover {
     text-underline-offset: 5px;
 }
 
+.site-title:hover,
+.site-title:focus-visible {
+    text-decoration: none;
+}
+
 .license-card-link:where(:hover, :focus-visible) {
     text-decoration: none !important;
 }
