@@ -9,7 +9,7 @@ After installing the boilerplate, you need to update a few key settings to make 
 
 Update the variables in `site-config.mjs` to reflect your target deployment environment:
 
-- `SITE_ORIGIN`: Your main domain (e.g., `https://example.com` or `https://org.github.io`).
+- `SITE_ORIGIN`: Your main domain (e.g., `https://docs.wpanchorbay.com` or `https://org.github.io`).
 - `BASE_PATH`: The sub-path if deploying to a subdirectory (e.g., `/my-project-docs`).
 - `REPO_URL`: The URL to your GitHub repository for the "Edit this page" links.
 

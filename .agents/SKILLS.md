@@ -76,6 +76,8 @@ Update `site-config.mjs`:
 - `WPANCHORBAY_URL`: keep this as `https://wpanchorbay.com`; it identifies the WPAnchorBay source brand.
 - `WPANCHORBAY_PROJECT_LANDING_URL`: update this for each project. Use it for project/product landing-page CTAs.
 
+After the user confirms the final `SITE_ORIGIN` and `BASE_PATH`, update every hardcoded absolute URL in frontmatter, metadata, docs content, and config comments so it matches the URL definitions from `site-config.mjs` / `src/lib/links.ts`. This is especially important for homepage canonical, OpenGraph, Twitter image, sitemap, and AI-discovery links.
+
 Update `package.json`:
 
 - Replace `name` with the new project slug.
@@ -330,6 +332,7 @@ Before publishing:
 - [ ] `package.json` `name` and `description` are updated.
 - [ ] `astro.config.mjs` title, description, social links, logo, and sidebar are updated.
 - [ ] `src/lib/links.ts` reflects the final URL structure.
+- [ ] After `SITE_ORIGIN` and `BASE_PATH` are confirmed, all hardcoded absolute links and metadata URLs have been updated to match the definitions from `site-config.mjs` / `src/lib/links.ts`.
 - [ ] Homepage content and social metadata are updated while preserving the custom splash homepage design unless redesign was requested.
 - [ ] 404 page links and asset paths are updated while preserving the custom 404 splash design unless redesign was requested.
 - [ ] WPAnchorBay footer remains on the homepage unless the user explicitly requested removal.
@@ -356,6 +359,7 @@ Before publishing:
 - Prefer editing existing files over creating parallel duplicate systems.
 - When changing links, update `src/lib/links.ts` first, then update consumers.
 - When changing frontmatter links, hardcode final URLs and add comments referencing the matching link constant.
+- After the user confirms `SITE_ORIGIN`, update every hardcoded absolute URL to match the final `site-config.mjs` address and `BASE_PATH`; do not leave stale demo domains in metadata or docs.
 - When deleting docs, update `astro.config.mjs`, `src/lib/links.ts`, `src/content/docs/404.mdx`, and any homepage CTAs that referenced them.
 - When adding AI-agent files, make them discoverable from `src/content/docs/others/ai-crawler.mdx`.
 - When unsure about visual direction, inspect `src/styles/home.css` and existing components before adding new patterns.
