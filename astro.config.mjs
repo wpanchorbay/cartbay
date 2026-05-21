@@ -39,10 +39,7 @@ export default defineConfig({
 				SocialIcons: './src/components/starlight/SocialIcons.astro',
 			},
 			head: [
-				{ tag: 'link', attrs: { rel: 'icon', href: `${BASE_PATH}/assets/favicon.ico` } },
-				{ tag: 'link', attrs: { rel: 'icon', sizes: '16x16', href: `${BASE_PATH}/assets/favicon-16x16.png` } },
-				{ tag: 'link', attrs: { rel: 'icon', sizes: '32x32', href: `${BASE_PATH}/assets/favicon-32x32.png` } },
-				{ tag: 'link', attrs: { rel: 'apple-touch-icon', href: `${BASE_PATH}/assets/apple-touch-icon.png` } },
+				{ tag: 'link', attrs: { rel: 'icon', type: 'image/svg+xml', href: `${BASE_PATH}/assets/wpanchorbay-icon.svg` } },
 			],
 			social: [{ icon: 'github', label: 'GitHub', href: REPO_URL }],
 			sidebar: [
