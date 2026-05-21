@@ -50,6 +50,7 @@ This project is built on [Astro Starlight](https://starlight.astro.build/) and e
 | `src/pages/llms.txt.ts` | Generates a compact LLM-readable documentation index. Uses `src/lib/llms.ts`. |
 | `src/pages/llms-full.txt.ts` | Generates a fuller LLM-readable text export of the docs corpus. Uses `src/lib/llms.ts`. |
 | `src/pages/markdown/[...slug].md.ts` | Generates per-page Markdown/MDX source exports such as `/markdown/index.md` and `/markdown/getting-started/installation.md`. |
+| `src/pages/agent-guides/[guide].md.ts` | Publishes selected `.agents/` guide files as static Markdown endpoints for AI discovery. |
 | `src/lib/llms.ts` | Collects docs from the content collection and renders `llms.txt` / `llms-full.txt`. Contains project title text that must be updated. |
 | `src/pages/.well-known/mcp.json.ts` | Public MCP discovery metadata. Contains project name/description and transport hints that must be updated. |
 | `mcp/server.mjs` | Optional local MCP JSON-RPC server over stdio or HTTP. Currently contains License Server-specific names, tools, prompts, and URI scheme that must be replaced for new projects. |
@@ -200,6 +201,7 @@ Update these files:
 | `src/pages/llms.txt.ts` | Usually no structural change; confirm output after updating `src/lib/llms.ts`. |
 | `src/pages/llms-full.txt.ts` | Usually no structural change; confirm output after updating `src/lib/llms.ts`. |
 | `src/pages/markdown/[...slug].md.ts` | Generates static per-page Markdown/MDX source exports from docs content. Keep this route unless the project explicitly disables AI-friendly per-page source access. |
+| `src/pages/agent-guides/[guide].md.ts` | Publishes selected `.agents/` guide files at `/agent-guides/*.md`. Keep it updated when agent guide filenames change. |
 | `src/pages/robots.txt.ts` | Boilerplate/demo default is `Disallow: /` to prevent indexing. For an actual project, change it to allow crawling and expose `Sitemap: ${FEED_LINKS.sitemap}` plus relevant LLM discovery comments. |
 | `src/pages/.well-known/mcp.json.ts` | Replace hardcoded `name`, `description`, docs links, and transport notes with project-specific values. |
 | `mcp/server.mjs` | Replace License Server-specific URI scheme, server name, tool names, prompt names, descriptions, and console messages. |
@@ -218,12 +220,12 @@ Recommended AI discovery additions when applicable:
 
 - `.well-known/agent-skills/` for public agent-consumable skill definitions.
 - A project-specific `SKILL.md` or similar agent instruction file.
-- Public references to `.agents/SKILLS.md` / `.agents/TASKS.md` if the repository is meant to be used by AI agents.
+- Public references to `.agents/SKILLS.md`, `.agents/TASKS.md`, and `.agents/CONTENT_AUTHORING.md` through `/agent-guides/*.md` endpoints if the repository is meant to be used by AI agents.
 - Sitemap-related AI discovery documentation when the project has multiple generated sitemap files.
 
 If a `SKILL.md`, `.agents/SKILLS.md`, `.agents/TASKS.md`, or `.well-known/agent-skills/` file is added, also reference it from `src/content/docs/others/ai-crawler.mdx`.
 
-Note: `.agents/` files are repository files, not automatically public website files. If an agent file must be available at a public URL, expose a copy through `public/`, `src/pages/`, or a documentation page.
+Note: `.agents/` files are repository files, not automatically public website files. This boilerplate exposes selected agent guides through `src/pages/agent-guides/[guide].md.ts`; update that route if new agent guide files should be public.
 
 ### Step 10 — Update Theme & Visual Identity
 
@@ -342,6 +344,7 @@ Before publishing:
 - [ ] AI discovery page lists all public machine-readable resources.
 - [ ] Global `rel="alternate"` links for `llms.txt` and `llms-full.txt` are present and point to the correct `BASE_PATH`.
 - [ ] Page-specific `rel="alternate" type="text/markdown"` links are present and point to generated `/markdown/*.md` exports.
+- [ ] Public `/agent-guides/*.md` endpoints expose the current agent guide files intended for AI discovery.
 - [ ] `robots.txt` has been changed from the boilerplate/demo `Disallow: /` default to the intended production crawler policy.
 - [ ] No stale hardcoded placeholder references remain; intentional WPAnchorBay source-brand references are preserved.
 - [ ] `pnpm run check` passes.

@@ -102,6 +102,7 @@ Use this checklist when adapting the Documentation Boilerplate for a new project
 - [ ] Verify each rendered HTML page includes global LLM-friendly `rel="alternate"` links to `llms.txt` and `llms-full.txt`.
 - [ ] Verify `src/pages/markdown/[...slug].md.ts` generates static per-page Markdown/MDX source exports, for example `/markdown/index.md` and `/markdown/others/ai-crawler.md`.
 - [ ] Verify each rendered docs page includes a page-specific `rel="alternate" type="text/markdown"` link to its matching `/markdown/*.md` export. Do not use `?output_format=md` for static GitHub Pages deployments.
+- [ ] Verify `/agent-guides/skills.md`, `/agent-guides/tasks.md`, and `/agent-guides/content-authoring.md` expose the current agent guide files intended for AI discovery.
 - [ ] Update `src/content/docs/others/ai-crawler.mdx` — ensure all live discovery endpoints are listed and their relative links are correct.
 - [ ] *(Optional)* If adding a `.agents/SKILLS.md`, `.agents/TASKS.md`, or other agent-guidance files, link to them from `src/content/docs/others/ai-crawler.mdx`.
 - [ ] *(Optional)* Add `.well-known/agent-skills/` entries if the project exposes agent-consumable skill definitions.
