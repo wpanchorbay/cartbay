@@ -78,7 +78,7 @@ export default defineConfig({
         },
         {
           label: "Resources",
-          items: [{ label: "Starlight Docs", slug: "official-docs" }],
+          items: [{ label: "Starlight Docs", slug: "resources/official-docs" }],
         },
       ],
     }),
