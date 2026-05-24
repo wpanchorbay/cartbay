@@ -4,7 +4,7 @@ This is the primary operating guide for AI agents and contributors working with 
 
 The goal of this template is to help a team quickly launch polished, SEO-friendly, AI-discoverable documentation with consistent branding, clean navigation, and production-ready deployment.
 
-For execution-level setup tracking, use `.agents/TASKS.md`. This `SKILLS.md` explains how to reason about the project, what to preserve, what to replace, and how to avoid template leftovers.
+This `SKILLS.md` explains how to reason about the project, what to preserve, what to replace, and how to avoid template leftovers.
 
 ---
 
@@ -54,7 +54,6 @@ This project is built on [Astro Starlight](https://starlight.astro.build/) and e
 | `src/pages/.well-known/mcp.json.ts` | Public MCP discovery metadata. Contains project name/description and transport hints that must be updated. |
 | `mcp/server.mjs` | Optional local MCP JSON-RPC server over stdio or HTTP. Currently contains License Server-specific names, tools, prompts, and URI scheme that must be replaced for new projects. |
 | `.github/workflows/deploy.yml` | GitHub Pages deployment workflow using Node.js 24 and pnpm 10. Sets `SITE_ORIGIN` and `DOCS_REPO_URL` from GitHub context. |
-| `.agents/TASKS.md` | Practical checklist for project setup and launch. Use it as the execution tracker. |
 | `.agents/CONTENT_AUTHORING.md` | Detailed documentation writing rules for frontmatter, `.md` vs `.mdx`, Starlight components, tabs, code blocks, and callouts. |
 
 ---
@@ -220,10 +219,10 @@ Recommended AI discovery additions when applicable:
 
 - `.well-known/agent-skills/` for public agent-consumable skill definitions.
 - A project-specific `SKILL.md` or similar agent instruction file.
-- Optional public references to `.agents/SKILLS.md`, `.agents/TASKS.md`, and `.agents/CONTENT_AUTHORING.md` only when the project intentionally exposes repository/contributor guidance to AI agents.
+- Optional public references to `.agents/SKILLS.md` and `.agents/CONTENT_AUTHORING.md` only when the project intentionally exposes repository/contributor guidance to AI agents.
 - Sitemap-related AI discovery documentation when the project has multiple generated sitemap files.
 
-If a `SKILL.md`, `.agents/SKILLS.md`, `.agents/TASKS.md`, or `.well-known/agent-skills/` file is added, also reference it from `src/content/docs/others/ai-crawler.mdx`.
+If a `SKILL.md`, `.agents/SKILLS.md`, or `.well-known/agent-skills/` file is added, also reference it from `src/content/docs/others/ai-crawler.mdx`.
 
 Note: `.agents/` files are repository files, not automatically public website files. Do not expose them by default for every project. If a project intentionally needs public agent guidance, add explicit public routes or docs pages and reference them from `src/content/docs/others/ai-crawler.mdx`.
 
@@ -355,7 +354,6 @@ Before publishing:
 
 ## 9. General Agent Instructions
 
-- Read `.agents/TASKS.md` before performing a full project setup.
 - Prefer editing existing files over creating parallel duplicate systems.
 - When changing links, update `src/lib/links.ts` first, then update consumers.
 - When changing frontmatter links, hardcode final URLs and add comments referencing the matching link constant.
