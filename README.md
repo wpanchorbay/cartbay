@@ -1,33 +1,36 @@
-# Documentation Boilerplate
+# CartBay Docs
 
-A reusable, production-ready documentation template built on [Astro Starlight](https://starlight.astro.build/). 
-This boilerplate is pre-configured with custom dark-mode aesthetics, custom components, optimized workflows, and GitHub Pages deployment.
+Astro Starlight documentation for CartBay abandoned cart recovery for WooCommerce.
 
-## Features
+This repository contains the public CartBay documentation site, including Getting Started guides, user/admin documentation, developer references, AI-agent guidance, and machine-readable discovery endpoints.
 
-- **Pre-configured Starlight:** Customized components, typography, and specific visual tweaks tailored for high-quality technical docs.
-- **GitHub Pages Ready:** Includes a working `.github/workflows/deploy.yml` that uses `pnpm` to build and deploy straight to GitHub Pages.
-- **Theme-Aware:** Optimized CSS overrides for both Light and Dark modes.
-- **SEO Optimized:** Sitemap, robots.txt, and metadata configured.
+## Documentation Areas
 
-## Quick Start
+- **Getting Started:** Introduction, requirements, installation, license activation, and quick start.
+- **User Guide:** CartBay admin sections for capture, recovery sequence, notifications, templates, offers, settings, and troubleshooting.
+- **Developers:** Architecture, storage, REST API, hooks, background jobs, templates, emails, build, and QA references.
+- **AI Agents:** Safe automation, protected agent access, and safety rules.
+- **Others:** FAQ and crawler/LLM discovery endpoints.
 
-1. Copy this boilerplate into your new project directory.
-2. Install dependencies:
+## Local Development
+
+1. Install dependencies:
    ```bash
    pnpm install
    ```
-3. Update `site-config.mjs` with your repository and domain details.
-4. Update `astro.config.mjs` with your project's `title`, `description`, and `sidebar` structure.
-5. Update `package.json` with your project's name.
-6. Run the local dev server:
+2. Run the local dev server:
    ```bash
    pnpm dev
    ```
+3. Check the docs before committing:
+   ```bash
+   pnpm run check
+   pnpm run build
+   ```
 
-## Customizing the Look
+## AI and Crawler Endpoints
 
-To change logos, update the SVG and PNG files inside `src/assets/` and `public/assets/`. You can edit the hero image directly in `src/content/docs/index.mdx`.
+The site publishes `robots.txt`, `llms.txt`, `llms-full.txt`, per-page Markdown exports under `/markdown/`, and `.well-known/mcp.json` for agent and crawler discovery.
 
 ## Troubleshooting
 

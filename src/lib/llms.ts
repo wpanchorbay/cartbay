@@ -25,9 +25,10 @@ export async function getDocsForLlms(): Promise<LLMDocEntry[]> {
 
 export function renderLlmsIndex(entries: LLMDocEntry[]) {
   const lines = [
-    "# License Server Documentation",
+    "# CartBay Documentation",
     "",
     `Canonical: ${FEED_LINKS.canonical}`,
+    `Full text: ${FEED_LINKS.llmsFull}`,
     "",
     "## Docs Index",
     "",
@@ -45,7 +46,7 @@ export function renderLlmsIndex(entries: LLMDocEntry[]) {
 
 export function renderLlmsFull(entries: LLMDocEntry[]) {
   const lines = [
-    "# License Server Documentation",
+    "# CartBay Documentation",
     "",
     `Canonical: ${FEED_LINKS.canonical}`,
     "",

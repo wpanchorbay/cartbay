@@ -45,6 +45,12 @@ export const EXTERNAL_LINKS = {
 
   /** Starlight official getting-started guide */
   starlightGettingStarted: "https://starlight.astro.build/getting-started/",
+
+  /** WooCommerce documentation */
+  woocommerce: "https://woocommerce.com/documentation/woocommerce/",
+
+  /** Action Scheduler documentation */
+  actionScheduler: "https://actionscheduler.org/",
 } as const;
 
 // ---------------------------------------------------------------------------
@@ -55,17 +61,50 @@ export const PAGE_LINKS = {
   /** Documentation home */
   home: `${BASE_PATH}/`,
 
+  /** Getting Started – Introduction */
+  introduction: `${BASE_PATH}/getting-started/introduction/`,
+
+  /** Getting Started – Requirements */
+  requirements: `${BASE_PATH}/getting-started/requirements/`,
+
   /** Getting Started – Installation */
   installation: `${BASE_PATH}/getting-started/installation/`,
 
-  /** Getting Started – Configuration */
-  configuration: `${BASE_PATH}/getting-started/configuration/`,
+  /** Getting Started – License Activation */
+  licenseActivation: `${BASE_PATH}/getting-started/license-activation/`,
 
-  /** Guides – Example */
-  exampleGuide: `${BASE_PATH}/guides/example/`,
+  /** Quick Start */
+  quickStart: `${BASE_PATH}/getting-started/quick-start/`,
 
-  /** Resources – Official Docs */
-  officialDocs: `${BASE_PATH}/resources/official-docs/`,
+  /** CartBay Overview admin section */
+  cartbayOverview: `${BASE_PATH}/user-guide/overview/`,
+
+  /** Capture */
+  capture: `${BASE_PATH}/user-guide/capture/`,
+
+  /** Recovery Sequence */
+  recoverySequence: `${BASE_PATH}/user-guide/recovery-sequence/`,
+
+  /** Notifications */
+  notifications: `${BASE_PATH}/user-guide/notifications/`,
+
+  /** Templates */
+  templates: `${BASE_PATH}/user-guide/templates/`,
+
+  /** Offers */
+  offers: `${BASE_PATH}/user-guide/offers/`,
+
+  /** Settings */
+  settings: `${BASE_PATH}/user-guide/settings/`,
+
+  /** Troubleshooting */
+  troubleshooting: `${BASE_PATH}/user-guide/troubleshooting/`,
+
+  /** Developer Architecture */
+  developerArchitecture: `${BASE_PATH}/developers/architecture/`,
+
+  /** Agent Access */
+  agentAccess: `${BASE_PATH}/agents/agent-access/`,
 } as const;
 
 // ---------------------------------------------------------------------------
@@ -101,5 +140,5 @@ export const FEED_LINKS = {
   llmsFull: buildAbsoluteUrl("/llms-full.txt"),
 
   /** MCP server documentation page */
-  mcpDocs: buildAbsoluteUrl("/agents/mcp-server/"),
+  mcpDocs: buildAbsoluteUrl("/agents/agent-access/"),
 } as const;

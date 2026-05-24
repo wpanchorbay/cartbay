@@ -17,18 +17,18 @@ hero:
     - text: Back to Docs Home
       icon: right-arrow
       # PAGE_LINKS.home — cannot use JS expressions in YAML frontmatter
-      link: /docs-boilerplate-starlight/
-    - text: Installation
+      link: /cartbay/
+    - text: Quick Start
       icon: rocket
       variant: minimal
-      # PAGE_LINKS.installation — cannot use JS expressions in YAML frontmatter
-      link: /docs-boilerplate-starlight/getting-started/installation/
+      # PAGE_LINKS.quickStart — cannot use JS expressions in YAML frontmatter
+      link: /cartbay/getting-started/quick-start/
 ---
 
 import { PAGE_LINKS } from '../../lib/links';
 
 <div class="license-404-links">
-	<a href={PAGE_LINKS.installation}>Installation</a>
-	<a href={PAGE_LINKS.configuration}>Configuration</a>
-	<a href={PAGE_LINKS.exampleGuide}>Example Guide</a>
+	<a href={PAGE_LINKS.quickStart}>Quick Start</a>
+	<a href={PAGE_LINKS.capture}>Capture</a>
+	<a href={PAGE_LINKS.troubleshooting}>Troubleshooting</a>
 </div>

@@ -1,9 +1,9 @@
 ---
-title: Meta files and discovery endpoints
-description: Learn more about Astro Starlight.
+title: AI and Crawler Discovery
+description: Machine-readable CartBay documentation endpoints for crawlers, LLMs, MCP clients, and automation systems.
 ---
 
-These public machine-readable files help crawlers, agents, and automation discover the docs and related integration metadata:
+These public machine-readable files help crawlers, agents, and automation discover CartBay documentation and integration metadata:
 
 - [robots.txt](../../robots.txt) for crawler policy and the sitemap reference.
 - [llms.txt](../../llms.txt) for the concise LLM-friendly overview of the documentation set. This endpoint is also advertised with a site-wide `<link rel="alternate">` tag.
@@ -12,3 +12,9 @@ These public machine-readable files help crawlers, agents, and automation discov
 - [sitemap-index.xml](../../sitemap-index.xml) for the top-level sitemap index.
 - [sitemap-0.xml](../../sitemap-0.xml) for the generated URL list currently referenced by the sitemap index.
 - [.well-known/mcp.json](../../.well-known/mcp.json) for MCP discovery metadata related to the public documentation site.
+
+Recommended agent entry points (for approved agents):
+
+- [Agent Access](../../agents/agent-access) explains CartBay's protected agent REST endpoints, WordPress Abilities, scopes, settings gates, and audit logging.
+- [Automation Workflows](../../agents/automation-workflows) provides safe read-only and approved-write workflows for AI agents.
+- [Safety Rules](../../agents/safety-rules) defines PII, contact, coupon, destructive, and developer-agent guardrails.

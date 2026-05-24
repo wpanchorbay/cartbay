@@ -35,14 +35,15 @@ export default defineConfig({
   integrations: [
     sitemap(),
     starlight({
-      title: "Documentation Boilerplate",
+      title: "CartBay Docs",
       description:
-        "A reusable boilerplate for jumping starting Starlight documentation.",
+        "End-user, developer, and AI-agent documentation for CartBay abandoned cart recovery for WooCommerce.",
       customCss: ["./src/styles/home.css"],
       logo: {
         src: LOGO_SVG_PATH,
         replacesTitle: false,
       },
+      disable404Route: true,
       components: {
         Head: "./src/components/starlight/Head.astro",
         SiteTitle: "./src/components/SiteTitle.astro",
@@ -88,27 +89,51 @@ export default defineConfig({
         : [],
       sidebar: [
         {
-          label: "Overview",
-          items: [{ label: "Welcome", slug: "" }],
-        },
-        {
           label: "Getting Started",
           items: [
+            { label: "Introduction", slug: "getting-started/introduction" },
+            { label: "Requirements", slug: "getting-started/requirements" },
             { label: "Installation", slug: "getting-started/installation" },
-            { label: "Configuration", slug: "getting-started/configuration" },
+            { label: "License Activation", slug: "getting-started/license-activation" },
+            { label: "Quick Start", slug: "getting-started/quick-start" },
           ],
         },
         {
-          label: "Guides",
-          items: [{ label: "Example Guide", slug: "guides/example" }],
+          label: "User Guide",
+          items: [
+            { label: "Overview", slug: "user-guide/overview" },
+            { label: "Capture", slug: "user-guide/capture" },
+            { label: "Recovery Sequence", slug: "user-guide/recovery-sequence" },
+            { label: "Notifications", slug: "user-guide/notifications" },
+            { label: "Templates", slug: "user-guide/templates" },
+            { label: "Offers", slug: "user-guide/offers" },
+            { label: "Settings", slug: "user-guide/settings" },
+            { label: "Troubleshooting", slug: "user-guide/troubleshooting" },
+          ],
         },
         {
-          label: "Resources",
-          items: [{ label: "Starlight Docs", slug: "resources/official-docs" }],
+          label: "Developers",
+          items: [
+            { label: "Architecture", slug: "developers/architecture" },
+            { label: "Data & Storage", slug: "developers/data-and-storage" },
+            { label: "REST API", slug: "developers/rest-api" },
+            { label: "Hooks & Jobs", slug: "developers/hooks-and-jobs" },
+            { label: "Templates & Emails", slug: "developers/templates-and-emails" },
+            { label: "Build & QA", slug: "developers/build-and-qa" },
+          ],
+        },
+        {
+          label: "AI Agents",
+          items: [
+            { label: "Agent Access", slug: "agents/agent-access" },
+            { label: "Automation Workflows", slug: "agents/automation-workflows" },
+            { label: "Safety Rules", slug: "agents/safety-rules" },
+          ],
         },
         {
           label: "Others",
           items: [
+            { label: "FAQ", slug: "others/faq" },
             { label: "AI & Crawler Governance", slug: "others/ai-crawler" },
           ],
         },

@@ -1,6 +1,6 @@
 ---
-title: Welcome to Documentation Boilerplate
-description: A starting point for creating beautiful documentation using Astro Starlight.
+title: CartBay Documentation
+description: Learn how to configure, operate, extend, and automate CartBay abandoned cart recovery for WooCommerce.
 template: splash
 prev: false
 next: false
@@ -10,7 +10,7 @@ head:
   - tag: meta
     attrs:
       property: og:url
-      content: https://docs.wpanchorbay.com/docs-boilerplate-starlight/
+      content: https://docs.wpanchorbay.com/cartbay/
   - tag: meta
     attrs:
       property: og:type
@@ -18,20 +18,20 @@ head:
   - tag: meta
     attrs:
       property: og:title
-      content: Welcome to Documentation Boilerplate
+      content: CartBay Documentation
   - tag: meta
     attrs:
       property: og:description
-      content: A starting point for creating beautiful documentation using Astro Starlight.
+      content: End-user, developer, and AI-agent documentation for CartBay abandoned cart recovery for WooCommerce.
   # FEED_LINKS.ogImage — cannot use JS expressions in YAML frontmatter
   - tag: meta
     attrs:
       property: og:image
-      content: https://docs.wpanchorbay.com/docs-boilerplate-starlight/assets/WPAnchorBay-Documentation-OG.png
+      content: https://docs.wpanchorbay.com/cartbay/assets/WPAnchorBay-Documentation-OG.png
   - tag: meta
     attrs:
       property: og:image:alt
-      content: Documentation Boilerplate – WPAnchorBay
+      content: CartBay Documentation – WPAnchorBay
   - tag: meta
     attrs:
       property: og:image:width
@@ -48,34 +48,34 @@ head:
   - tag: meta
     attrs:
       name: twitter:title
-      content: Welcome to Documentation Boilerplate
+      content: CartBay Documentation
   - tag: meta
     attrs:
       name: twitter:description
-      content: A starting point for creating beautiful documentation using Astro Starlight.
+      content: Learn how to recover abandoned WooCommerce carts with capture, recovery emails, coupons, analytics, and safe automation.
   # FEED_LINKS.ogImage — cannot use JS expressions in YAML frontmatter
   - tag: meta
     attrs:
       name: twitter:image
-      content: https://docs.wpanchorbay.com/docs-boilerplate-starlight/assets/WPAnchorBay-Documentation-OG.png
+      content: https://docs.wpanchorbay.com/cartbay/assets/WPAnchorBay-Documentation-OG.png
   - tag: meta
     attrs:
       name: twitter:image:alt
-      content: Documentation Boilerplate – WPAnchorBay
+      content: CartBay Documentation – WPAnchorBay
 hero:
-  tagline: Kickstart your technical documentation with custom components, dark mode optimizations, and Github Pages deployment built-in.
+  tagline: Recover abandoned WooCommerce checkout revenue with consented capture, a three-email sequence, restore links, coupons, analytics, and safe AI-agent controls.
   image:
-    alt: Documentation Boilerplate (wpanchorbay Logo)
+    alt: CartBay by WPAnchorBay
     file: ~/assets/wpanchorbay-icon.png
   actions:
-    - text: Get Started
-      # PAGE_LINKS.installation — cannot use JS expressions in YAML frontmatter
-      link: /docs-boilerplate-starlight/getting-started/installation/
+    - text: Getting Started
+      # PAGE_LINKS.introduction — cannot use JS expressions in YAML frontmatter
+      link: /cartbay/getting-started/introduction/
       icon: right-arrow
       variant: primary
-    - text: View GitHub Template
+    - text: Product Page
       # EXTERNAL_LINKS.githubRepo — cannot use JS expressions in YAML frontmatter
-      link: https://github.com/wpanchorbay/docs-boilerplate-starlight
+      link: https://wpanchorbay.com/plugins/cartbay/
       icon: external
       variant: minimal
 ---
@@ -84,19 +84,78 @@ import { CardGrid } from '@astrojs/starlight/components';
 import Card from '../../components/starlight/Card.astro';
 import WPAnchorBayFooter from '../../components/WPAnchorBayFooter.astro';
 
+## What It Does
+
+CartBay helps WooCommerce stores recover abandoned checkout revenue. It captures opted-in checkout visitors, tracks abandoned carts, sends a focused three-email recovery sequence, restores carts through secure links, offers optional recovery coupons, and reports recovered revenue inside the WordPress admin.
+
+## Core Capabilities
+
+- Consent-based checkout capture for classic checkout and WooCommerce Block Checkout.
+- WooCommerce-native abandoned cart sessions stored through order objects.
+- Action Scheduler-powered abandonment detection and email scheduling.
+- Three recovery email steps with editable WooCommerce email templates.
+- Secure restore and unsubscribe links using hashed tokens.
+- Optional CartBay-generated recovery coupons with validation safeguards.
+- Overview analytics for tracked carts, abandoned carts, recoveries, revenue, restore clicks, and failed restores.
+- Notification tracking for queued, attempted, sent, failed, retry-queued, delivered, and canceled recovery emails.
+- Optional protected AI-agent REST and WordPress Abilities access.
+
+## Main Workflows
+
+1. Install CartBay and activate the license.
+2. Configure checkout capture, consent text, and abandonment timeout.
+3. Set the three-email recovery sequence timing.
+4. Customize recovery email templates in WooCommerce email settings.
+5. Configure recovery coupons in Offers if your sequence uses incentives.
+6. Verify email delivery with Test Mode and the test flow.
+7. Monitor CartBay Overview and Notifications after launch.
+
+## Start From
+
 <CardGrid stagger>
-	<Card title="Pre-configured Styles" icon="pencil">
-		Comes with customized typography, dark mode specific overrides, and a rich aesthetic tailored for professional documentation.
+	<Card title="Getting Started" icon="rocket" href="/cartbay/getting-started/introduction/">
+		Learn what CartBay does, confirm requirements, install the plugin, activate your license, and launch your first recovery sequence.
 	</Card>
-	<Card title="GitHub Pages Ready" icon="rocket">
-		Includes a reliable GitHub Actions workflow that builds your documentation using PNPM and automatically deploys to GitHub Pages.
+	<Card title="Quick Start" icon="right-arrow" href="/cartbay/getting-started/quick-start/">
+		Install CartBay, activate your license, configure consent, and launch the default three-email recovery sequence.
 	</Card>
-	<Card title="Custom Components" icon="setting">
-		Override Starlight defaults out of the box. Includes modified SiteTitle, ThemeProvider, and social icon configurations.
+	<Card title="Capture" icon="approve-check-circle" href="/cartbay/user-guide/capture/">
+		Understand checkout consent, classic checkout capture, Block Checkout capture, abandonment timing, and privacy behavior.
 	</Card>
-	<Card title="SEO & Performance" icon="open-book">
-		Fully leverages Astro's static site generation and includes optimized meta tags, sitemaps, and robots.txt.
+	<Card title="Recovery Sequence" icon="comment" href="/cartbay/user-guide/recovery-sequence/">
+		Configure the three recovery emails, timing, coupon usage, restore links, unsubscribe handling, and background jobs.
 	</Card>
 </CardGrid>
+
+## Quick Links
+
+- [Requirements](/cartbay/getting-started/requirements/)
+- [Installation](/cartbay/getting-started/installation/)
+- [License Activation](/cartbay/getting-started/license-activation/)
+- [Quick Start](/cartbay/getting-started/quick-start/)
+- [CartBay Overview](/cartbay/user-guide/overview/)
+- [Capture](/cartbay/user-guide/capture/)
+- [Recovery Sequence](/cartbay/user-guide/recovery-sequence/)
+- [Templates](/cartbay/user-guide/templates/)
+- [Offers](/cartbay/user-guide/offers/)
+- [Notifications](/cartbay/user-guide/notifications/)
+- [Settings](/cartbay/user-guide/settings/)
+- [FAQ](/cartbay/others/faq/)
+
+## Who This Is For
+
+- Store owners who want to recover more WooCommerce checkout revenue.
+- Store administrators who need to configure capture, emails, coupons, and reporting.
+- Support teams who need to diagnose email delivery, restore links, coupons, or recovery attribution.
+- Developers who need architecture, storage, REST API, hooks, templates, and QA details.
+- AI agents and automation systems that need safe, least-privilege CartBay workflows.
+
+## How to Navigate This Documentation
+
+Start with Getting Started if you are installing CartBay for the first time. Use the User Guide when configuring a specific CartBay admin section. Use Developers for architecture, integration, and extension details. Use AI Agents when enabling automation or MCP-based workflows. Use Others for FAQ, discovery endpoints, and documentation metadata.
+
+<p style="text-align:center;margin:3rem 0 2rem;">
+	<a class="sl-link-button primary" href="/cartbay/getting-started/introduction/">Getting Started</a>
+</p>
 
 <WPAnchorBayFooter />

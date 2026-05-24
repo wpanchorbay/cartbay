@@ -1,8 +1,8 @@
 {
-  "name": "docs-boilerplate-starlight",
+  "name": "cartbay-docs",
   "type": "module",
   "version": "0.0.1",
-  "description": "A reusable Astro Starlight boilerplate based on WPAnchorBay standards.",
+  "description": "End-user, developer, and AI-agent documentation for CartBay abandoned cart recovery for WooCommerce.",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -22,11 +22,5 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
     "typescript": "^6.0.3"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "esbuild",
-      "sharp"
-    ]
   }
 }
