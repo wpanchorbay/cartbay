@@ -38,7 +38,7 @@ export default defineConfig({
       title: "CartBay Docs",
       description:
         "End-user, developer, and AI-agent documentation for CartBay abandoned cart recovery for WooCommerce.",
-      customCss: ["./src/styles/home.css"],
+      customCss: ["./src/styles/home.css", "./src/styles/content-images.css"],
       logo: {
         src: LOGO_SVG_PATH,
         replacesTitle: false,

@@ -15,15 +15,19 @@ If you cannot find your key or need account help, contact WPAnchorBay support at
 
 ## Where to Activate
 
-Open `WooCommerce > CartBay > Settings`.
+Open **WooCommerce > Settings > Cart > Settings**.
 
-Find the `License & Updates` area and use `Activate New Key`.
+Find the **License & Updates** area and use **Activate New Key**.
+
+<img src="/cartbay/assets/screenshots/cartbay-license-activate.png" alt="CartBay License Activation screen" data-lightbox="true" />
+
 
 ## Activate the Key
 
 1. Copy your license key from the purchase email or WPAnchorBay dashboard.
-2. Paste it into `Activate New Key`.
-3. Save or activate the settings.
+2. Paste it into **Activate New Key**.
+3. Go to the bottom of the page and click **Save Changes**.
+<img src="/cartbay/assets/screenshots/save-changes.png" alt="Save Changes" style="border:none" data-lightbox="false" />
 4. Confirm the license status updates.
 
 Expected key format:

@@ -19,3 +19,69 @@ const shouldExposeMarkdownAlternate = entry.id !== '404';
 		/>
 	)
 }
+<script>
+	/**
+	 * Lightbox for content images with data-lightbox="true".
+	 * @since 1.0.0
+	 */
+	(function () {
+		const SELECTOR = '.sl-markdown-content img[data-lightbox="true"]';
+
+		function open(src, alt) {
+			const overlay = document.createElement("div");
+			overlay.className = "cartbay-lightbox-overlay";
+			overlay.setAttribute("role", "dialog");
+			overlay.setAttribute("aria-label", alt || "Enlarged image");
+			overlay.innerHTML =
+				'<button class="cartbay-lightbox-close" aria-label="Close">&times;</button><img src="' +
+				encodeURI(src) +
+				'" alt="' +
+				(alt ? alt.replace(/"/g, "&quot;") : "") +
+				'" />';
+			document.body.appendChild(overlay);
+			document.body.style.overflow = "hidden";
+			requestAnimationFrame(function () {
+				overlay.setAttribute("data-visible", "");
+			});
+
+			function close() {
+				overlay.removeAttribute("data-visible");
+				overlay.addEventListener(
+					"transitionend",
+					function () {
+						if (overlay.parentNode) {
+							overlay.parentNode.removeChild(overlay);
+						}
+						document.body.style.overflow = "";
+					},
+					{ once: true },
+				);
+			}
+
+			overlay.addEventListener("click", function (e) {
+				if (e.target === overlay) close();
+			});
+			overlay
+				.querySelector(".cartbay-lightbox-close")
+				.addEventListener("click", close);
+			document.addEventListener(
+				"keydown",
+				function handler(e) {
+					if (e.key === "Escape") {
+						close();
+						document.removeEventListener("keydown", handler);
+					}
+				},
+				{ once: true },
+			);
+		}
+
+		document.addEventListener("click", function (e) {
+			var img = e.target.closest(SELECTOR);
+			if (img) {
+				e.preventDefault();
+				open(img.src, img.alt);
+			}
+		});
+	})();
+</script>
