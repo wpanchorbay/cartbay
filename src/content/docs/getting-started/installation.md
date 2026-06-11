@@ -62,20 +62,7 @@ There  are several ways to access CartBay:
 - Confirm `WooCommerce > CartBay` and/or `WooCommerce > Settings > Cart` opens.
 - Confirm the CartBay settings tab appears under `WooCommerce > Settings > Cart`.
 - Confirm no WooCommerce-missing notice appears.
-- Continue to [License Activation](/cartbay/getting-started/license-activation/).
-
-
-## First-Run Wizard
-
-On first install, CartBay may redirect administrators to a setup wizard. The wizard helps configure license, consent, timing, email delivery awareness, and launch settings.
-
-Wizard steps:
-
-1. Welcome.
-2. License.
-3. Consent & Timing.
-4. Email Delivery.
-5. Launch.
+- Continue to [Setup Wizard](/cartbay/getting-started/setup-wizard/).
 
 
 ## Updating CartBay
