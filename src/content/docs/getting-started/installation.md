@@ -13,23 +13,23 @@ Confirm the store meets the [Requirements](/cartbay/getting-started/requirements
 
 Get the CartBay plugin ZIP (`cartbay.zip`) file from WPAnchorBay site, or from your purchase email or the marketplace you purchased from. Then follow these steps:
 
-![Install Plugin Page - CartBay](~/assets/screenshots/install/1-install-plugin-page.png)
+<img src="/cartbay/assets/screenshots/install/1-install-plugin-page.png" alt="Install Plugin Page - CartBay" data-lightbox="true" />
 
 1. In WordPress admin, go to **Plugins**.
 2. Make sure you have already installed [WooCommerce](/cartbay/getting-started/requirements/#woocommerce) and activated it.
 3. Click **Add New**.
 
-![Add New Plugin Page - CartBay](~/assets/screenshots/install/2-add-plugin-page.png)
+<img src="/cartbay/assets/screenshots/install/2-add-plugin-page.png" alt="Add New Plugin Page - CartBay" data-lightbox="true" />
 
 4. Click **Upload Plugin**.
 
-![Upload Plugin Page - CartBay](~/assets/screenshots/install/3-upload-plugin-page.png)
+<img src="/cartbay/assets/screenshots/install/3-upload-plugin-page.png" alt="Upload Plugin Page - CartBay" data-lightbox="true" />
 
 5. Choose the CartBay ZIP (`cartbay.zip`) file.
 
 6. Click **Install Now**.
 
-![Activate Plugin Page - CartBay](~/assets/screenshots/install/4-activate-plugin-page.png)
+<img src="/cartbay/assets/screenshots/install/4-activate-plugin-page.png" alt="Activate Plugin Page - CartBay" data-lightbox="true" />
 
 7. Click **Activate Plugin**.
 
@@ -43,7 +43,7 @@ After plugin activation, CartBay creates its default options, registers recovery
 
 You can go to the CartBay dashboard by clicking on the **Overview** link on the CartBay row of the plugins list.
 
-![Installed Plugin Page - CartBay](~/assets/screenshots/install/5-installed-plugin-page.png)
+<img src="/cartbay/assets/screenshots/install/5-installed-plugin-page.png" alt="Installed Plugin Page - CartBay" data-lightbox="true" />
 
 **CartBay appears in:**
 
@@ -53,9 +53,9 @@ There  are several ways to access CartBay:
 - **WordPress Admin Direct:** `WooCommerce > CartBay`
 - **From Plugins  Page:** `Plugins > CartBay > Overview`
 
-![CartBay Access Guide - CartBay](~/assets/screenshots/install/6-access-plugin-page.png)
+<img src="/cartbay/assets/screenshots/install/6-access-plugin-page.png" alt="CartBay Access Guide - CartBay" data-lightbox="true" />
 
-![CartBay Plugin Homepage - CartBay](~/assets/screenshots/install/cartbay-homepage.png)
+<img src="/cartbay/assets/screenshots/install/cartbay-homepage.png" alt="CartBay Plugin Homepage - CartBay" data-lightbox="true" />
 
 **Verify Installation:**
 
