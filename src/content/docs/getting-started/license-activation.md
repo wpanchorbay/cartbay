@@ -36,6 +36,20 @@ Expected key format:
 WPAB-XXXXXXXXXXXX-XXXXXXXXXXXX
 ```
 
+Once activated, you will see the following license states - 
+
+| Label | Value | Description |
+--------|-------|--------------
+| **Status** | `Active` | Shows the most recent license state returned by CartBay licensing. |
+| **Current Key** | `XXXXXXXXXXXXXXXXXXXXXXXXXXXA4C1` | Only a masked version is shown here. The full key stays stored in the protected license option. |
+| **Activate New Key** | Input Box | In case of new license activation, reactivate or license update, this field will be used to enter the license key. Then use the `Save Changes` below of the page to save the license key. |
+| **Actions** | `Check Current License`, `Remove License` | Use these tools to verify the current license status or remove a stored key from this site. |
+
+
+
+<img src="/cartbay/assets/screenshots/cartbay-active-license-status.png" alt="CartBay License Active screen" data-lightbox="true" />
+
+
 ## License Statuses
 
 | Status | Meaning |
@@ -47,15 +61,15 @@ WPAB-XXXXXXXXXXXX-XXXXXXXXXXXX
 | Dev Mode | Development-domain bypass is active. |
 | Server Error | The license server was unreachable. Runtime recovery features continue. |
 
-## Development and Staging Domains
+## Actions
 
-CartBay recognizes development domains such as `localhost`, `.local`, `.dev`, `.test`, and staging domains. These can be treated as valid locally without consuming production activation slots.
 
-## Check Current License
+
+### Check Current License
 
 Use `Check Current License` in Settings after renewal, domain changes, or support troubleshooting.
 
-## Remove License
+### Remove License
 
 Use `Remove License` only when disconnecting the site from licensed update checks or replacing the key.
 
@@ -63,7 +77,7 @@ Removing the local license does not stop capture, recovery emails, restore links
 
 ## License Server Outages
 
-If the license server is temporarily unreachable, CartBay does not lock the store. Runtime flows fail open so checkout capture, email sending, and restore behavior continue.
+If the license server is temporarily unreachable, CartBay will function normally. CartBay will automatically retry to connect to the server later for license status check and updates. 
 
 ## Need Help?
 
