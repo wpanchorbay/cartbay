@@ -84,9 +84,7 @@ export default defineConfig({
           },
         },
       ],
-      social: REPO_URL
-        ? [{ icon: "github", label: "GitHub", href: REPO_URL }]
-        : [],
+
       sidebar: [
         {
           label: "Getting Started",
