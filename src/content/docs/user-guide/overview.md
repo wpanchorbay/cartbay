@@ -3,11 +3,13 @@ title: CartBay Overview
 description: Understand the CartBay Overview admin section, including reporting cards, session table, filters, exports, status guide, and period selector.
 ---
 
-The CartBay Overview section is the first reporting screen for abandoned cart recovery activity. It summarizes capture, abandonment, restore, recovery, revenue, and session status data so store administrators can quickly see whether CartBay is tracking carts and recovering orders.
+The CartBay Overview section is the first reporting screen or home page for abandoned cart recovery activity. It summarizes capture, abandonment, restore, recovery, revenue, and session status data so store administrators can quickly see whether CartBay is tracking carts and recovering orders.
 
 ## Where to Find It
 
-Open `WooCommerce > CartBay > Overview` or `WooCommerce > Settings > Cart > Overview`.
+Open `WooCommerce > CartBay (> Overview)` or `WooCommerce > Settings > Cart (> Overview)`.
+
+<img src="/cartbay/assets/screenshots/cartbay-overview-section.png" alt="CartBay Overview section or landing page or home page" data-lightbox="true" />
 
 ## Purpose
 

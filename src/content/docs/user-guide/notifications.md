@@ -7,7 +7,9 @@ The Notifications section shows the lifecycle of CartBay recovery emails. It hel
 
 ## Where to Find It
 
-Open `WooCommerce > CartBay > Notifications`.
+Open `WooCommerce > CartBay > Notifications` or `WooCommerce > Settings > Cart > Notifications`.
+
+<img src="/cartbay/assets/screenshots/cartbay-notifications-section.png" alt="CartBay Notifications section" data-lightbox="true" />   
 
 ## Purpose
 
