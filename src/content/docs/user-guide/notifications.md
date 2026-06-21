@@ -98,6 +98,10 @@ The table shows:
 | Scheduled | Scheduled send time. |
 | Actions | Opens the notification Details modal. |
 
+### Pagination
+
+The table displays 20 notifications per page by default. Pagination controls appear when the selected period and filters return more than one page of notifications. You can also adjust the number of items shown per page using the page size selector (options include 20, 50, 100, and 200).
+
 ## Details Modal
 
 The Details action opens a modal with deeper lifecycle data.

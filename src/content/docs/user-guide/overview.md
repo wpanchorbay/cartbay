@@ -161,6 +161,14 @@ The Status Guide explains what each CartBay lifecycle status means and shows cur
 
 Use the Status Guide when the Sessions table filter results do not match expectations. Remember that the guide shows current counts, while the overview cards above use the selected reporting period.
 
+## Help Section
+
+The Help section is located at the bottom of the Overview page. It provides quick access to CartBay support and configuration resources:
+
+- **Documentation**: A link to this documentation site.
+- **Support Email**: A direct contact link (`support@wpanchorbay.com`) for reaching out to the support team.
+- **Open Setup Wizard**: A button to re-open the CartBay Setup Wizard at any time to reconfigure the baseline settings.
+
 ## Best Practices
 
 - Check the 7-day view after launch or configuration changes.
