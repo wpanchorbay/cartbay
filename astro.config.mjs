@@ -35,7 +35,7 @@ export default defineConfig({
   integrations: [
     sitemap(),
     starlight({
-      title: "CartBay Docs",
+      title: "CartBay Documentation",
       description:
         "End-user, developer, and AI-agent documentation for CartBay abandoned cart recovery for WooCommerce.",
       customCss: ["./src/styles/home.css", "./src/styles/content-images.css"],
