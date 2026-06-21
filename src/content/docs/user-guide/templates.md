@@ -11,6 +11,8 @@ Open `WooCommerce > CartBay > Templates`.
 
 To edit a specific recovery email, click `Edit in WooCommerce` for that row.
 
+<img src="/cartbay/assets/screenshots/cartbay-email-templates-page.png" alt="CartBay Email Templates management page" data-lightbox="true" />
+
 ## Purpose
 
 CartBay recovery emails are WooCommerce email classes. This means they use WooCommerce email wrappers, global email styles, previews, and mail sending behavior while still receiving CartBay-specific restore links, unsubscribe links, coupon data, and session context.

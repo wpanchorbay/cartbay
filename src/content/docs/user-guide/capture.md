@@ -9,6 +9,9 @@ The Capture section controls how CartBay starts the abandoned-cart recovery life
 
 Open `WooCommerce > CartBay > Capture` or `WooCommerce > Settings > Cart > Capture`.
 
+
+<img src="/cartbay/assets/screenshots/cartbay-capture-page.png" alt="CartBay Capture page" data-lightbox="true" />
+
 ## Purpose
 
 CartBay uses this section to decide when a checkout visitor becomes a recoverable cart session. Capture must work before CartBay can mark carts abandoned, send recovery emails, restore carts, or report recovery revenue.

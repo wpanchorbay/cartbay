@@ -11,6 +11,8 @@ Open `WooCommerce > CartBay > Offers`.
 
 Coupon history is available through the `View coupon history and details` button.
 
+<img src="/cartbay/assets/screenshots/cartbay-offers-page.png" alt="CartBay Offers page" data-lightbox="true" />
+
 ## Purpose
 
 Offers define the incentive used by coupon-enabled recovery emails. The Recovery Sequence decides which email steps include coupons. The Offers section decides what those coupons look like.

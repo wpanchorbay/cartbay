@@ -9,6 +9,9 @@ The Recovery Sequence section controls what happens after a captured cart become
 
 Open `WooCommerce > CartBay > Recovery Sequence`.
 
+<img src="/cartbay/assets/screenshots/cartbay-recovery-sequence.png" alt="CartBay Recovery Sequence page" data-lightbox="true" />
+
+
 ## Purpose
 
 CartBay always detects abandoned sessions for reporting. The recovery sequence controls whether CartBay also sends recovery emails for those abandoned sessions.
