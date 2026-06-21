@@ -37,33 +37,33 @@ a:hover {
 }
 
 .actions .primary {
-    background: #5765f2;
+    background: #851aff;
 }
 
 .actions .primary:hover {
-    background: #3d50f5;
+    background: #6610cc;
 }
 
 :root[data-theme="dark"] .actions .minimal {
     background: color-mix(in srgb, #0f172a 72%, #1f2b4d 28%);
-    border-color: color-mix(in srgb, #8ea2ff 28%, transparent);
+    border-color: color-mix(in srgb, #a152ff 28%, transparent);
     color: #dbe5ff;
 }
 
 :root[data-theme="dark"] .actions .minimal:hover {
-    background: color-mix(in srgb, #1d2b57 70%, #7a8dff 30%);
+    background: color-mix(in srgb, #1d2b57 70%, #c592ff 30%);
     color: #ffffff;
 }
 
 :root[data-theme="dark"] .actions .primary {
-    background: #6a78ff;
-    border-color: #7e8aff;
+    background: #a152ff;
+    border-color: #b87aff;
     color: #ffffff;
 }
 
 :root[data-theme="dark"] .actions .primary:hover {
-    background: #7a86ff;
-    border-color: #93a0ff;
+    background: #c592ff;
+    border-color: #d7b3ff;
 }
 
 /* Scrollbar Dimensions - Chrome, Edge, Safari */
@@ -190,6 +190,8 @@ html[data-has-hero] body {
 }
 
 :root {
+    --sl-hue-accent: 268;
+    --sl-color-accent: #851aff;
     --license-nav-bg: color-mix(
         in srgb,
         var(--sl-color-bg-nav) 76%,
@@ -207,12 +209,12 @@ html[data-has-hero] body {
         rgba(255, 255, 255, 1) 100%
     );
     --license-hero-shadow: drop-shadow(
-        0 28px 60px color-mix(in srgb, #5765f2 28%, transparent)
+        0 28px 60px color-mix(in srgb, #851aff 28%, transparent)
     );
     --license-hero-shadow-hover: drop-shadow(
-            0 32px 76px color-mix(in srgb, #5765f2 46%, transparent)
+            0 32px 76px color-mix(in srgb, #851aff 46%, transparent)
         )
-        drop-shadow(0 10px 24px color-mix(in srgb, #5765f2 34%, transparent));
+        drop-shadow(0 10px 24px color-mix(in srgb, #851aff 34%, transparent));
 }
 
 :root[data-theme="light"] {
@@ -225,7 +227,7 @@ html[data-has-hero] body {
     --license-nav-border: color-mix(in srgb, #fff 10%, transparent);
     --license-hero-gradient: linear-gradient(
         176deg,
-        color-mix(in srgb, #5865f2 28%, var(--sl-color-bg) 72%) 0%,
+        color-mix(in srgb, #851aff 28%, var(--sl-color-bg) 72%) 0%,
         var(--sl-color-bg) 56%,
         var(--sl-color-bg) 100%
     );
@@ -306,14 +308,14 @@ html[data-has-hero] body {
     min-height: 2.75rem;
     padding: 0.65rem 1.1rem;
     border-radius: 0.5rem;
-    background: #5865f2;
+    background: #851aff;
     color: #fff;
     font-weight: 700;
     text-decoration: none;
 }
 
 .license-center-button:hover {
-    background: color-mix(in srgb, #5865f2 88%, #000);
+    background: color-mix(in srgb, #851aff 88%, #000);
     color: #fff;
 }
 
@@ -332,7 +334,7 @@ html[data-has-hero] body {
     border-radius: 999px;
     background: radial-gradient(
         circle,
-        color-mix(in srgb, #5865f2 30%, transparent) 0%,
+        color-mix(in srgb, #851aff 30%, transparent) 0%,
         color-mix(in srgb, #39cccc 20%, transparent) 32%,
         transparent 72%
     );
@@ -357,10 +359,10 @@ html[data-has-hero] body {
         ),
         linear-gradient(
             155deg,
-            color-mix(in srgb, #5865f2 22%, white 78%) 0%,
+            color-mix(in srgb, #851aff 22%, white 78%) 0%,
             color-mix(in srgb, #39cccc 14%, white 86%) 100%
         );
-    border: 1px solid color-mix(in srgb, #5865f2 20%, transparent);
+    border: 1px solid color-mix(in srgb, #851aff 20%, transparent);
     box-shadow:
         0 1px 0 rgba(255, 255, 255, 0.9) inset,
         0 28px 70px rgba(88, 101, 242, 0.18);
@@ -396,7 +398,7 @@ html[data-has-hero] body {
     padding: 0.65rem 1rem;
     border-radius: 999px;
     background: color-mix(in srgb, var(--sl-color-bg-nav) 82%, white 18%);
-    border: 1px solid color-mix(in srgb, #5865f2 16%, var(--sl-color-hairline));
+    border: 1px solid color-mix(in srgb, #851aff 16%, var(--sl-color-hairline));
     color: var(--sl-color-text-accent);
     font-weight: 700;
     text-decoration: none;
@@ -410,7 +412,7 @@ html[data-has-hero] body {
 
 .license-404-links a:hover {
     transform: translateY(-1px);
-    border-color: color-mix(in srgb, #5865f2 34%, var(--sl-color-hairline));
+    border-color: color-mix(in srgb, #851aff 34%, var(--sl-color-hairline));
     color: var(--sl-color-white);
     text-decoration: none;
     box-shadow: 0 16px 30px rgba(88, 101, 242, 0.14);
@@ -426,10 +428,10 @@ html[data-has-hero] body {
         ),
         linear-gradient(
             155deg,
-            color-mix(in srgb, #5865f2 24%, #11182c 76%) 0%,
+            color-mix(in srgb, #851aff 24%, #11182c 76%) 0%,
             color-mix(in srgb, #39cccc 14%, #0b1321 86%) 100%
         );
-    border-color: color-mix(in srgb, #7f8cff 28%, rgba(255, 255, 255, 0.08));
+    border-color: color-mix(in srgb, #a152ff 28%, rgba(255, 255, 255, 0.08));
     box-shadow:
         0 1px 0 rgba(255, 255, 255, 0.08) inset,
         0 34px 76px rgba(88, 101, 242, 0.24);
@@ -441,7 +443,7 @@ html[data-has-hero] body {
 
 :root[data-theme="dark"] .license-404-links a {
     background: color-mix(in srgb, #11182c 76%, var(--sl-color-bg-nav) 24%);
-    border-color: color-mix(in srgb, #7f8cff 18%, var(--sl-color-hairline));
+    border-color: color-mix(in srgb, #a152ff 18%, var(--sl-color-hairline));
     box-shadow: 0 16px 28px rgba(88, 101, 242, 0.14);
 }
 
@@ -463,11 +465,11 @@ html[data-has-hero] body {
 
 :root[data-theme="dark"] .pagination-links a {
     background-color: color-mix(in srgb, #0f172a 70%, #1f2b4d 30%);
-    border-color: color-mix(in srgb, #8ea2ff 20%, transparent);
+    border-color: color-mix(in srgb, #a152ff 20%, transparent);
     color: var(--sl-color-white);
 }
 
 :root[data-theme="dark"] .pagination-links a:hover {
-    background-color: color-mix(in srgb, #1d2b57 70%, #7a8dff 30%);
-    border-color: color-mix(in srgb, #8ea2ff 40%, transparent);
+    background-color: color-mix(in srgb, #1d2b57 70%, #c592ff 30%);
+    border-color: color-mix(in srgb, #c592ff 40%, transparent);
 }
