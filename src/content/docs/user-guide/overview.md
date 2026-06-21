@@ -113,6 +113,10 @@ The Sessions table lists CartBay recovery sessions for the selected reporting pe
 
 Sortable columns include Session, Cart Total, Created, Last Activity, and Emails Sent. Click a sortable column header to change the sort order. Clicking the active sort column toggles between ascending and descending order.
 
+### Searching
+
+Use the search box above the table to quickly find a specific session. You can search by the exact **Session ID** or a partial match on the captured **Email** address.
+
 ### Status Filter
 
 The status dropdown filters the Sessions table by lifecycle status.
