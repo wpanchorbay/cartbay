@@ -59,6 +59,8 @@ Before diagnosing a specific feature, confirm:
 | Sent but no inbox delivery | WordPress accepted the message, but provider or inbox delivery failed. | Check SMTP/ESP logs, spam placement, and the Notifications section. |
 | Test email fails | Mail delivery configuration is missing or blocked. | Use **WooCommerce > Settings > Cart > Notifications > Email Delivery Test** and review the detected delivery status. |
 
+For step-by-step delivery plugin setup, domain authentication, and a longer troubleshooting reference, see [Email Delivery Setup](/cartbay/getting-started/email-delivery-setup/).
+
 ## Template Problems
 
 | Problem | Likely cause | Fix |

@@ -71,6 +71,8 @@ No. CartBay hands recovery emails to WooCommerce and WordPress mail delivery. Yo
 
 Configure the records recommended by your email provider, usually SPF, DKIM, and DMARC. These records help receiving inboxes trust recovery emails sent from your store domain.
 
+For a full step-by-step walkthrough of supported plugins, provider setup, and DNS authentication, see [Email Delivery Setup](/cartbay/getting-started/email-delivery-setup/).
+
 ## Templates
 
 #### Where do I edit recovery emails?
