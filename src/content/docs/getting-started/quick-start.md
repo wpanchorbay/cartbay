@@ -65,6 +65,8 @@ Recommended first launch:
 
 Open [Templates](/cartbay/user-guide/templates/) and use `Trigger Test Flow` after enabling Test Mode. The test flow creates a dummy abandoned session and schedules the first recovery email in about 30 seconds.
 
+`Trigger Test Flow` only confirms that CartBay schedules and hands off the email. It does not confirm your site can actually deliver mail. Before launch, follow [Email Delivery Setup](/cartbay/getting-started/email-delivery-setup/) to configure an SMTP or ESP-native plugin, then use **Send Test Email** on the [Notifications](/cartbay/user-guide/notifications/) page.
+
 :::caution
 Use Test Mode on staging or during controlled QA. Disable it before normal production monitoring if you do not want shortened test behavior available.
 :::

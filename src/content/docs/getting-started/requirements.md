@@ -41,7 +41,7 @@ CartBay sends recovery emails through WordPress and WooCommerce mail. A reliable
 
 **Recommended setup:**
 
-- Use an SMTP plugin or transactional email service.
+- Use an [SMTP plugin or transactional email service](/cartbay/getting-started/email-delivery-setup/).
 - Verify sender authentication such as SPF, DKIM, and DMARC where your email provider supports them.
 - Send test emails before launching recovery emails.
 - Monitor failed or retry-queued notifications after launch.
@@ -56,6 +56,7 @@ CartBay can detect some mail delivery and email logger plugins and may show an a
 
 Related docs:
 
+- [Email Delivery Setup](/cartbay/getting-started/email-delivery-setup/) walks through choosing and configuring an SMTP or ESP-native plugin, plus SPF, DKIM, DMARC, and test verification.
 - [Notifications](/cartbay/user-guide/notifications/) explains sent, failed, retry-queued, and canceled recovery email records.
 - [Templates](/cartbay/user-guide/templates/) explains recovery email editing and the test flow.
 - [Settings](/cartbay/user-guide/settings/) explains mail environment warnings and log links.

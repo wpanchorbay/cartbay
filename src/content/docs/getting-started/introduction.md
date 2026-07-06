@@ -47,5 +47,5 @@ CartBay is a WooCommerce abandoned cart recovery plugin. It captures consented c
 ## Important Notes
 
 - CartBay is privately distributed by WPAnchorBay and is not hosted on WordPress.org.
-- A working email delivery service is strongly recommended before enabling recovery emails.
+- A working email delivery service is strongly recommended before enabling recovery emails. See [Email Delivery Setup](../email-delivery-setup/) for setup steps.
 - Store owners remain responsible for consent wording, privacy policy updates, and local compliance requirements.

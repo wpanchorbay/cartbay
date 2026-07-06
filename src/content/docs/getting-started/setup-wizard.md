@@ -38,6 +38,8 @@ CartBay checks your environment for an active SMTP delivery service or an email 
 * If no SMTP service is detected, CartBay will warn you that recovery emails may land in spam and recommend installing an SMTP plugin.
 * **Test Email**: You can enter an email address and send a test email to verify that your site can successfully deliver emails.
 
+See [Email Delivery Setup](/cartbay/getting-started/email-delivery-setup/) for a step-by-step guide to choosing and configuring an SMTP or ESP-native plugin.
+
 <img src="/cartbay/assets/screenshots/setup-wizard/4-CartBay-setup-wizard.png" alt="Email Delivery Step" data-lightbox="true" />
 
 ### 5. Launch
