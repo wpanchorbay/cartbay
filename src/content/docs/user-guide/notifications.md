@@ -172,14 +172,17 @@ These values represent what WordPress would use when sending a recovery email. I
 2. Click **Send Test Email**.
 3. A status message appears next to the button. Check the recipient inbox within a few minutes.
 
-The test email uses `wp_mail()` — the standard WordPress mail function. This means it works with **any** SMTP plugin (WP Mail SMTP, Post SMTP, FluentSMTP, Brevo, Mailgun, SendGrid, etc.). If `wp_mail` fails, the result message includes the error.
+The test email uses `wp_mail()` — the standard WordPress mail function. This means it works with **any** SMTP plugin (WP Mail SMTP, Post SMTP, FluentSMTP, Brevo, Mailgun, SendGrid, etc.). If the send fails, CartBay captures the real error WordPress raised on the `wp_mail_failed` hook and appends it to the result message — for example, "Failed to send test email. SMTP Error: Could not authenticate." — instead of only a generic failure notice.
 
 ### When the Test Fails
 
 | Symptom | Likely cause | Action |
 |---|---|---|
-| "Failed to send test email" | `wp_mail()` returned `false`. | Check that your SMTP plugin is configured with valid credentials and the WordPress site can reach the SMTP server. |
-| Email not received | The SMTP provider may have rejected, spam-foldered, or delayed the message. | Check the SMTP plugin's log, your provider's dashboard, or the recipient spam folder. |
+| "Failed to send test email." followed by a specific reason (e.g. `SMTP Error: Could not authenticate.`) | `wp_mail()` returned `false`, and WordPress reported the underlying PHPMailer/SMTP error. | Fix the reported problem first — usually bad credentials, an unreachable host, or a blocked port — then confirm your SMTP plugin is configured correctly. |
+| "Failed to send test email." with no further detail | `wp_mail()` returned `false` without a captured reason. | Check that your SMTP plugin is configured with valid credentials and the WordPress site can reach the SMTP server. |
+| Status message reports success, but the email is not received | The SMTP provider may have rejected, spam-foldered, or delayed the message. | Check the SMTP plugin's log, your provider's dashboard, or the recipient spam folder. |
+
+See [Email Delivery Setup](/cartbay/getting-started/email-delivery-setup/) for a full walkthrough of choosing and configuring an SMTP or ESP-native plugin.
 
 ---
 
