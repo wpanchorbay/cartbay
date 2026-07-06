@@ -70,6 +70,9 @@ export const PAGE_LINKS = {
   /** Getting Started – Installation */
   installation: `${BASE_PATH}/getting-started/installation/`,
 
+  /** Getting Started – Email Delivery Setup */
+  emailDeliverySetup: `${BASE_PATH}/getting-started/email-delivery-setup/`,
+
   /** Getting Started – License Activation */
   licenseActivation: `${BASE_PATH}/getting-started/license-activation/`,
 

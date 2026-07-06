@@ -93,6 +93,7 @@ export default defineConfig({
             { label: "Requirements", slug: "getting-started/requirements" },
             { label: "Installation", slug: "getting-started/installation" },
             { label: "Setup Wizard", slug: "getting-started/setup-wizard" },
+            { label: "Email Delivery Setup", slug: "getting-started/email-delivery-setup" },
             { label: "License Activation", slug: "getting-started/license-activation" },
             { label: "Quick Start", slug: "getting-started/quick-start" },
           ],
