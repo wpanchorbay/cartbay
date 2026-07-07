@@ -33,7 +33,11 @@ Overview stat cards use the selected reporting period. The Status Guide counts c
 
 ## Stat Cards
 
-CartBay shows the most important cards directly on the page and places additional cards behind a `More` card/modal.
+CartBay Free shows the core recovery cards directly on the page: **Tracked Carts**, **Abandoned Carts**, **Recovered Carts**, **Abandoned Cart Value**, **Recovered Revenue**, and **Recovery Rate**.
+
+:::note[CartBay Pro]
+The advanced cards below — **Link-Restored and Purchased**, **Restore Clicks**, **Click-to-Recovery Rate**, and **Failed Restores** — along with the `More` card/modal and the CSV **Exports**, are part of [CartBay Pro](/cartbay/getting-started/license-activation/). CartBay Free tracks the core recovery funnel; Pro adds this deeper reporting.
+:::
 
 #### Tracked Carts
 
@@ -53,7 +57,7 @@ Recovered Carts is the number of abandoned CartBay sessions that matched a later
 
 CartBay can match recovered orders by restored session identity, restore token, CartBay coupon metadata, or billing email hash fallback.
 
-#### Link-Restored and Purchased
+#### Link-Restored and Purchased (CartBay Pro)
 
 Link-Restored and Purchased counts recovered carts where the shopper first clicked a CartBay restore link from a recovery email.
 
@@ -77,19 +81,19 @@ Recovery Rate is recovered carts divided by abandoned carts for the selected per
 
 If this value is low, review recovery email delivery, template copy, offer strength, restore link behavior, and checkout friction.
 
-#### Restore Clicks
+#### Restore Clicks (CartBay Pro)
 
 Restore Clicks counts clicks on CartBay restore links recorded during the selected period.
 
 This measures engagement with recovery emails. High restore clicks with low purchases can indicate checkout, product availability, coupon, shipping, or payment friction.
 
-#### Click-to-Recovery Rate
+#### Click-to-Recovery Rate (CartBay Pro)
 
 Click-to-Recovery Rate is link-restored purchases divided by restore-link clicks for the selected period.
 
 This is not the same as overall recovery rate. It only measures how often restore-link clicks become recovered purchases.
 
-#### Failed Restores
+#### Failed Restores (CartBay Pro)
 
 Failed Restores counts restore attempts that failed token, session, or cart validation during the selected period.
 
@@ -135,7 +139,7 @@ Use the filter to focus on carts that need attention. For example, filter by `Ab
 
 The table shows 20 sessions per page. Pagination controls appear when the selected period and filters return more than one page of sessions.
 
-### Exports
+### Exports (CartBay Pro)
 
 The Overview section includes two export actions.
 

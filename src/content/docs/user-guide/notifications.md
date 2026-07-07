@@ -31,6 +31,12 @@ The selected period affects the metric cards and notification rows shown on the 
 
 ## Stat Cards
 
+CartBay Free shows the core delivery-health cards — **Pending Queue**, **Emails Sent**, **Emails Failed**, and **Acceptance Rate** — plus the email delivery test.
+
+:::note[CartBay Pro]
+The **Best Email Step** and **More** cards, the per-step recovery performance table, the notification rows table (status filter, per-notification **Details** modal), and CSV export are part of [CartBay Pro](/cartbay/getting-started/license-activation/). CartBay Free records each recovery email's core state (queued, sent, failed, retried, canceled); Pro adds the detailed per-notification lifecycle log and step-level analytics.
+:::
+
 ### Pending Queue
 
 Pending Queue shows current recovery emails waiting to send, including first-time queued notifications and retry-queued notifications.
@@ -55,13 +61,13 @@ Acceptance Rate compares sent or delivered emails against attempted sends.
 
 A low acceptance rate usually points to WordPress mail configuration, SMTP, or provider issues.
 
-### Best Email Step
+### Best Email Step (CartBay Pro)
 
 Best Email Step identifies the sequence step with the strongest tracked recovery performance in the selected period.
 
 Use it to understand whether Email 1, Email 2, or Email 3 is driving the most recovery value.
 
-### More
+### More (CartBay Pro)
 
 The `More` card opens a modal with additional status-level counts for queued, attempted, sent, delivered, failed, retry-queued, and canceled notifications.
 
@@ -102,7 +108,7 @@ The table shows:
 
 The table displays 20 notifications per page by default. Pagination controls appear when the selected period and filters return more than one page of notifications. You can also adjust the number of items shown per page using the page size selector (options include 20, 50, 100, and 200).
 
-## Details Modal
+## Details Modal (CartBay Pro)
 
 The Details action opens a modal with deeper lifecycle data.
 
