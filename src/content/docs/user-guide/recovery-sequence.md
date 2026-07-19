@@ -107,18 +107,20 @@ Example: if Email 2 is accidentally set earlier than Email 1, CartBay saves a sa
 
 Each email step has an `Include a recovery coupon` toggle.
 
-When enabled:
+When enabled (CartBay Free):
 
-- CartBay creates a CartBay-generated coupon before sending that email step.
-- The coupon uses the global [Offers](/cartbay/user-guide/offers/) settings for type, amount, and expiry.
-- `{coupon_code}` and `{coupon_expiry}` placeholders resolve for that email.
-- The coupon is linked to the CartBay session and captured email.
-- Coupon use is validated against restored session identity and checkout email.
+- CartBay inserts the single **static coupon code** you configured in [Offers](/cartbay/user-guide/offers/) into that email step.
+- The static code references an existing WooCommerce coupon; CartBay adds it to the email as plain text and does not create, modify, or expire it.
+- The `{coupon_code}` placeholder resolves to that static code. The same code is used for every coupon-enabled step and every session.
 
 When disabled:
 
-- No coupon is generated for that step.
+- No coupon code is inserted for that step.
 - Coupon placeholders should not be used in that step's email copy.
+
+:::note[CartBay Pro]
+CartBay Free inserts a single static coupon code. Generating a **unique per-session coupon** <span class="cb-badge cb-badge--pro">Pro</span> — a one-time `CARTBAY-` code that is single-use, email-restricted, given an expiry, validated against the restored session identity and checkout email, and auto-applied when the cart is restored — is part of [CartBay Pro](/cartbay/getting-started/license-activation/). With Pro, both `{coupon_code}` and `{coupon_expiry}` resolve to that generated coupon. See [Offers](/cartbay/user-guide/offers/) for the full behavior.
+:::
 
 :::tip
 The default sequence keeps coupons off for Email 1 and Email 2, and uses a coupon only in Email 3. This avoids training shoppers to expect immediate discounts.
@@ -151,7 +153,7 @@ Failed sends can be retried up to three attempts. Retry delay is `15 * attempts`
 
 Every recovery email includes a secure restore link. Restore links use the `cartbay_restore` query parameter and hashed token storage.
 
-When clicked, CartBay validates the token, rebuilds the cart when possible, stores checkout attribution in the WooCommerce session, optionally applies the recovery coupon, and redirects the shopper to checkout.
+When clicked, CartBay validates the token, rebuilds the cart when possible, stores checkout attribution in the WooCommerce session, and redirects the shopper to checkout. In CartBay Free the shopper enters the static coupon code from the email manually; automatically applying a unique per-session coupon on restore is part of [CartBay Pro](/cartbay/getting-started/license-activation/) <span class="cb-badge cb-badge--pro">Pro</span>.
 
 ## Unsubscribe Links
 

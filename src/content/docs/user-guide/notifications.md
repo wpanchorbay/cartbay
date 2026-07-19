@@ -61,17 +61,17 @@ Acceptance Rate compares sent or delivered emails against attempted sends.
 
 A low acceptance rate usually points to WordPress mail configuration, SMTP, or provider issues.
 
-### Best Email Step (CartBay Pro)
+### Best Email Step <span class="cb-badge cb-badge--pro">Pro</span>
 
 Best Email Step identifies the sequence step with the strongest tracked recovery performance in the selected period.
 
 Use it to understand whether Email 1, Email 2, or Email 3 is driving the most recovery value.
 
-### More (CartBay Pro)
+### More <span class="cb-badge cb-badge--pro">Pro</span>
 
 The `More` card opens a modal with additional status-level counts for queued, attempted, sent, delivered, failed, retry-queued, and canceled notifications.
 
-## Status Filter
+## Status Filter <span class="cb-badge cb-badge--pro">Pro</span>
 
 The status dropdown filters notification rows by lifecycle status.
 
@@ -91,7 +91,7 @@ The search box can match notification rows by recipient, session ID, notificatio
 
 Use search when a customer or support ticket references a specific email, session, or notification ID.
 
-## Notifications Table
+## Notifications Table <span class="cb-badge cb-badge--pro">Pro</span>
 
 The table shows:
 
@@ -108,7 +108,7 @@ The table shows:
 
 The table displays 20 notifications per page by default. Pagination controls appear when the selected period and filters return more than one page of notifications. You can also adjust the number of items shown per page using the page size selector (options include 20, 50, 100, and 200).
 
-## Details Modal (CartBay Pro)
+## Details Modal <span class="cb-badge cb-badge--pro">Pro</span>
 
 The Details action opens a modal with deeper lifecycle data.
 

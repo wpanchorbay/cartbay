@@ -1,102 +1,60 @@
 ---
 title: Offers
-description: Configure CartBay recovery coupon type, amount, expiry, coupon history, validation behavior, and discount best practices.
+description: Set the static recovery coupon code CartBay Free adds to recovery emails, and learn how CartBay Pro generates unique per-session coupons with validation and expiry.
 ---
 
-The Offers section controls the coupon settings CartBay uses when a recovery email step includes a coupon. In the current version, Offers focuses on CartBay-generated discount coupons; broader incentive types are reserved for future expansion.
+The Offers section controls the coupon CartBay adds to recovery emails when a recovery step includes one. In CartBay Free, Offers holds a single **static coupon code** that references an existing WooCommerce coupon. CartBay Pro replaces it with unique, per-session generated coupons.
 
 ## Where to Find It
 
 Open `WooCommerce > CartBay > Offers`.
 
-Coupon history is available through the `View coupon history and details` button.
-
 <img src="/cartbay/assets/screenshots/cartbay-offers-page.png" alt="CartBay Offers page" data-lightbox="true" />
 
 ## Purpose
 
-Offers define the incentive used by coupon-enabled recovery emails. The Recovery Sequence decides which email steps include coupons. The Offers section decides what those coupons look like.
+Offers defines the incentive used by coupon-enabled recovery emails. The [Recovery Sequence](/cartbay/user-guide/recovery-sequence/) decides which email steps include a coupon; Offers decides which coupon code those steps insert.
 
-## Coupon Type
+## Static Coupon Code
 
-`Coupon Type` controls how the CartBay-generated discount is calculated.
+In CartBay Free, Offers is a single **static coupon code** field, stored in `cartbay_settings[static_coupon_code]`.
 
-Default: Fixed Cart Discount.
+- Enter the code of an **existing WooCommerce coupon** you have already created under `Marketing > Coupons`.
+- When a recovery step has `Include a recovery coupon` enabled, CartBay inserts this code into that email as plain text through the `{coupon_code}` placeholder.
+- CartBay Free does **not** generate, modify, restrict, or expire the coupon. Its discount type, amount, usage limits, and expiry date are whatever you configured on the WooCommerce coupon itself.
+- The same static code is used for every coupon-enabled step and every recovery session, and shoppers enter it manually at checkout.
 
-Options:
-
-| Type | Meaning | Use when |
-|---|---|---|
-| Fixed Cart Discount | Applies a fixed store-currency amount to the cart. | You want predictable margin impact. |
-| Percentage | Applies a percentage discount to the full cart total. | You intentionally want the discount to scale with cart value. |
-
-When Percentage is selected, the UI shows a warning because the discount applies to the full cart total, regardless of which products the buyer adds or the final cart value.
-
-:::caution
-Use percentage discounts carefully on stores with high-value carts or low-margin products.
+:::tip
+Create the WooCommerce coupon first (`Marketing > Coupons`), then paste its exact code into Offers. If the code does not match a real WooCommerce coupon, the email will show a code that applies no discount.
 :::
 
-## Coupon Amount
+## Dynamic Recovery Coupons <span class="cb-badge cb-badge--pro">Pro</span>
 
-`Coupon Amount` controls the numeric discount amount.
+:::note[CartBay Pro]
+Automatic, per-session coupon generation is part of [CartBay Pro](/cartbay/getting-started/license-activation/). CartBay Free uses the single static code described above; Pro replaces it with a unique coupon generated for each recovery session.
+:::
 
-Default: `10`.
-
-For fixed-cart coupons, enter the store-currency amount. For percentage coupons, enter the percentage number, such as `10` for 10% off.
-
-The Offers section shows a live discount summary so administrators can confirm what future coupon-enabled emails will include.
-
-## Coupon Expiry
-
-`Coupon Expiry` controls how long CartBay-generated coupons remain valid after they are created.
-
-Default: `7` days.
-
-Allowed range: `1` to `365` days.
-
-Shorter expiry windows create urgency. Longer expiry windows reduce friction but can leave incentives available after the shopper's purchase intent has cooled.
-
-## Discount Summary
-
-The Discount Summary explains the current coupon configuration in plain language. It updates when the coupon type, amount, or expiry fields change.
-
-Example:
-
-```text
-Recovery emails with coupons enabled will include a $10 off discount coupon. Expires 7 days after generation.
-```
-
-Use the summary to verify the merchant-facing meaning of the settings before saving.
-
-## When Coupons Are Generated
-
-CartBay generates coupons only for recovery sequence steps where `Include a recovery coupon` is enabled.
-
-Default behavior:
-
-- Email 1: coupon disabled.
-- Email 2: coupon disabled.
-- Email 3: coupon enabled.
+With CartBay Pro, coupon-enabled recovery steps generate a unique coupon per session instead of inserting the static code.
 
 Generated coupon behavior:
 
-- Code prefix is `CARTBAY-`.
-- One active coupon is generated per CartBay session.
-- Coupons are single-use.
-- Coupons are individual-use.
-- Coupons are restricted to the captured email.
-- Session meta stores `_cartbay_coupon_code` and `_cartbay_coupon_expires_at`.
-- Coupon meta stores CartBay session and generated-coupon context.
+- Code prefix is `CARTBAY-` followed by 8 random alphanumeric characters, unique to the session.
+- One coupon is generated per CartBay session.
+- Coupons are single-use and individual-use.
+- Coupons are restricted to the captured email address.
+- Coupons carry an expiry date and are applied automatically when the shopper restores the cart from a recovery email.
+- Session meta stores `_cartbay_coupon_code` and `_cartbay_coupon_expires_at`; the coupon stores its CartBay session and generated-coupon context.
+- The `{coupon_code}` and `{coupon_expiry}` placeholders resolve to the generated coupon and its expiry.
 
-## Coupon Validation
+The shipped version of CartBay Pro generates fixed-cart coupons worth `10` in store currency with a `7`-day expiry. These generation defaults are fixed — there is no coupon type, amount, or expiry configuration screen.
 
-CartBay validates generated coupons against restored session identity and restored/checkout email. This prevents a recovery coupon from being used outside the matching recovery flow.
+### Coupon Validation <span class="cb-badge cb-badge--pro">Pro</span>
 
-CartBay also avoids applying recovery coupons when the cart contains WooCommerce Subscription products or subscription variations.
+CartBay Pro validates each generated coupon against the restored session identity and the restored/checkout email, so a recovery coupon cannot be used outside its matching recovery flow. CartBay Pro also avoids applying recovery coupons when the cart contains WooCommerce Subscription products or subscription variations.
 
-## Coupon History
+### Coupon History <span class="cb-badge cb-badge--pro">Pro</span>
 
-Coupon History is read-only and shows CartBay-generated coupons with recovery context.
+CartBay Pro adds a read-only Coupon History view, opened with the `View coupon history and details` button, showing generated coupons with recovery context.
 
 Summary cards:
 
@@ -118,8 +76,7 @@ The `More` action expands row-level details such as full code, generated email, 
 
 ## Best Practices
 
-- Start with a fixed-cart discount that protects margin.
+- In CartBay Free, create the WooCommerce coupon first and keep its own usage limits and expiry conservative, since the same static code is shared across every recovery email.
 - Use coupons later in the sequence unless the store has a proven first-email discount strategy.
-- Keep expiry short enough to encourage action.
-- Review Coupon History before increasing discount amounts.
-- Avoid percentage offers for high-value carts unless margins support them.
+- Avoid percentage or high-value discounts on low-margin products.
+- With CartBay Pro, review Coupon History before changing your discount strategy.

@@ -1,9 +1,9 @@
 ---
 title: Settings
-description: Manage CartBay licensing, retention, uninstall cleanup, admin navigation, AI-agent access, logs, test mode, and mail environment warnings.
+description: Manage CartBay retention, uninstall cleanup, admin navigation, logs, test mode, mail environment warnings, and — with CartBay Pro — licensing and updates.
 ---
 
-The Settings section contains CartBay's operational controls. It is where administrators manage licensing and updates, retention, uninstall behavior, admin menu placement, optional AI-agent access, logs, test mode, and mail-delivery warnings.
+The Settings section contains CartBay's operational controls. It is where administrators manage retention, uninstall behavior, admin menu placement, logs, test mode, and mail-delivery warnings. With CartBay Pro, it also manages licensing and updates.
 
 ## Where to Find It
 
@@ -12,10 +12,14 @@ Open `WooCommerce > CartBay > Settings`. or
 
 ## Purpose
 
-Use Settings after the recovery workflow is configured to manage site-level behavior: update access, data lifecycle, admin convenience, troubleshooting, and safe automation.
+Use Settings after the recovery workflow is configured to manage site-level behavior: data lifecycle, admin convenience, and troubleshooting. With CartBay Pro, it also manages update access.
 
-## License & Updates
-Manage the license used for updates and support access.
+## License & Updates <span class="cb-badge cb-badge--pro">Pro</span>
+Manage the license used for private updates and support access.
+
+:::note[CartBay Pro]
+Licensing and private updates apply to [CartBay Pro](/cartbay/getting-started/license-activation/) only. The free plugin has no License & Updates section — it installs and updates through WordPress.org and needs no license key. This section appears only when CartBay Pro is installed and active.
+:::
 
 <img src="/cartbay/assets/screenshots/cartbay-settings-top-license.png" alt="CartBay settings - License & Updates section" data-lightbox="true" />
 
@@ -31,7 +35,6 @@ Common statuses:
 | Inactive | No active license state is stored locally. |
 | Expired | The license server reported an expired license. |
 | Invalid | The stored key was rejected. |
-| Dev Mode | Development-domain bypass is active. |
 | Server Error | The license server was unreachable. CartBay fails open for runtime continuity. |
 
 License checks do not interrupt checkout capture, recovery emails, or restore behavior if the license server is temporarily unavailable.
@@ -62,8 +65,6 @@ WPAB-XXXXXXXXXXXX-XXXXXXXXXXXX
 ```
 
 Activation sends the key, product slug, and site domain to the WPAnchorBay license server through the local WordPress admin request. The browser does not call the license server directly.
-
-Development domains such as `localhost`, `.local`, `.dev`, `.test`, and staging domains can be treated as valid locally without consuming production activation slots.
 
 #### License Actions
 
@@ -114,7 +115,7 @@ When off:
 
 When on:
 
-- Deleting the plugin removes CartBay settings, license data, campaign settings, sessions, generated coupons, template records, suppression records, scheduled actions, transients, and CartBay-owned log files.
+- Deleting the plugin removes CartBay settings, campaign settings, sessions, template records, suppression records, scheduled actions, transients, and log entries — plus, if CartBay Pro is installed, its license data and generated coupons.
 
 :::danger
 Enable this only when intentionally removing CartBay and its data permanently.
@@ -134,88 +135,6 @@ Default: enabled.
 When enabled, `WooCommerce > CartBay` opens the CartBay settings area directly. When disabled, CartBay remains available through `WooCommerce > Settings > Cart`.
 
 
-## AI Agent Access
-Let authorized AI agents manage CartBay through protected REST endpoints, WordPress Abilities, and MCP Adapter exposure.
-
-<img src="/cartbay/assets/screenshots/cartbay-settings-ai-agent-access.png" alt="CartBay settings - Admin Navigation section" data-lightbox="true" />
-
-
-#### Enable Agent Access
-
-`Enable Agent Access` is the master gate for CartBay AI-agent and automation access.
-
-Default: off.
-
-When off, CartBay agent REST endpoints and agent ability surfaces are not available for automation use. Keep it off unless the store has a defined automation workflow.
-
-Read [Agent Access](/cartbay/agents/agent-access/) before enabling this feature.
-
-#### Agent Surfaces
-
-The Agent Surfaces row shows the main automation surfaces:
-
-- `/wp-json/cartbay/v1/agent`
-- `cartbay/*` WordPress Abilities
-
-Use Application Passwords for WordPress Abilities and MCP workflows. Use CartBay Bearer tokens only for CartBay agent REST endpoints.
-
-#### REST Access
-
-`REST Access` enables CartBay's agent REST endpoints when the master agent access setting is enabled.
-
-Default: on.
-
-Turn this off if the store uses WordPress Abilities or MCP exposure but does not want CartBay Bearer-token REST access.
-
-#### Abilities Access
-
-`Abilities Access` exposes CartBay WordPress Abilities for authenticated users when the WordPress Abilities API exists.
-
-Default: on.
-
-This is useful for automation clients that discover tools through WordPress-native ability metadata.
-
-#### MCP Public Exposure
-
-`MCP Public Exposure` marks CartBay Abilities as MCP-public for the official WordPress MCP Adapter.
-
-Default: off.
-
-Enable it only for dedicated, least-privilege MCP users. MCP clients act as authenticated WordPress users.
-
-#### Agent Write Actions
-
-`Agent Write Actions` allows authorized agents to update safe CartBay settings and campaign settings.
-
-Default: off.
-
-Keep this disabled for read-only monitoring agents.
-
-#### Agent Contact Actions
-
-`Agent Contact Actions` allows authorized agents to perform email-related actions, such as sending or canceling recovery emails.
-
-Default: off.
-
-Treat this as high impact because it can affect customer communication.
-
-#### Agent Sensitive Data
-
-`Agent Sensitive Data` allows authorized agents to request raw customer email, cart snapshot, coupon, and linked order details.
-
-Default: off.
-
-Keep this disabled unless the automation workflow explicitly needs sensitive data and the store owner approves that access.
-
-#### Agent Destructive Actions
-
-`Agent Destructive Actions` allows authorized agents to expire or delete CartBay sessions.
-
-Default: off.
-
-Enable only for tightly controlled cleanup workflows.
-
-
 ## Debug & Testing
 Developer tools for QA, troubleshooting, and short-cycle testing.
 
@@ -223,11 +142,11 @@ Developer tools for QA, troubleshooting, and short-cycle testing.
 
 #### Test Mode
 
-`Test Mode` enables QA-oriented behavior such as shortened email delays and dummy test sessions.
+`Test Mode` enables QA-oriented behavior, such as the Templates `Trigger Test Flow` tool and dummy test sessions.
 
 Default: off.
 
-Use it in staging or controlled production testing when you need quick feedback without waiting for the normal recovery schedule.
+Test Mode does not shorten the normal recovery schedule. Its purpose is to let you trigger a one-off test recovery email quickly for QA. Use it in staging or controlled production testing.
 
 Test Mode is required for the Templates section's `Trigger Test Flow` button.
 
@@ -235,25 +154,15 @@ Test Mode is required for the Templates section's `Trigger Test Flow` button.
 
 `WooCommerce Logs` opens the WooCommerce Status log viewer filtered to the `cartbay` log source.
 
-Use it to inspect checkout capture, Action Scheduler, restore, license, and recovery messages written through WooCommerce logging.
+Use it to inspect checkout capture, Action Scheduler, restore, and recovery messages written through WooCommerce logging.
 
 #### CartBay Logs
 
-`CartBay Logs` opens CartBay's hidden Logs section.
+`CartBay Logs` opens CartBay's built-in Logs section.
 
-CartBay's sanitized JSON-line log file is stored under:
+CartBay stores its sanitized log entries in the database, in the non-autoloaded option `cartbay_log_entries`, which is bounded to roughly the most recent 500 entries. The same messages are also written to the WooCommerce logger under the `cartbay` source, viewable at `WooCommerce > Status > Logs`.
 
-```text
-wp-content/uploads/cartbay/cartbay.log
-```
-
-Default log behavior:
-
-- Logging enabled.
-- 7 days retention.
-- 5 MB maximum file size.
-
-The Logs section supports filtering, pagination, details modal, and copy controls for support workflows.
+The Logs section supports filtering, pagination, a details modal, and copy controls for support workflows.
 
 ## Miscellaneous
 
@@ -265,9 +174,8 @@ Detection does not send a test email. Use the Templates test flow and SMTP/ESP l
 
 #### Best Practices
 
-- Keep the license active for private updates.
+- With CartBay Pro, keep the license active for private updates and support.
 - Use 30 days retention unless privacy or reporting requirements say otherwise.
 - Keep uninstall deletion disabled unless removing CartBay permanently.
-- Keep agent access disabled until a specific automation workflow requires it.
 - Use Test Mode only for controlled QA.
 - Check both WooCommerce Logs and CartBay Logs when troubleshooting.

@@ -25,9 +25,9 @@ The Templates table lists all three recovery email steps.
 
 | Row | WooCommerce email ID | Purpose |
 |---|---|---|
-| Recovery Email 1 | `cartbay_email_recovery_1` | Initial reminder. |
-| Recovery Email 2 | `cartbay_email_recovery_2` | Value follow-up. |
-| Recovery Email 3 | `cartbay_email_recovery_3` | Final recovery email. |
+| Recovery Email 1 | `cartbay_recovery_1` | Initial reminder. |
+| Recovery Email 2 | `cartbay_recovery_2` | Value follow-up. |
+| Recovery Email 3 | `cartbay_recovery_3` | Final recovery email. |
 
 Each row shows the current subject, timing, coupon status, and an action button.
 
@@ -47,7 +47,7 @@ Use the small edit icon beside the timing value to jump back to Recovery Sequenc
 
 The Coupon column shows whether that email step is configured to include a recovery coupon.
 
-Use the edit icon beside the coupon value to review [Offers](/cartbay/user-guide/offers/). The per-step coupon on/off setting lives in Recovery Sequence, while coupon type, amount, and expiry live in Offers.
+Use the edit icon beside the coupon value to review [Offers](/cartbay/user-guide/offers/). The per-step coupon on/off setting lives in Recovery Sequence, while the coupon code inserted into recovery emails is configured in Offers.
 
 ## Edit in WooCommerce
 
