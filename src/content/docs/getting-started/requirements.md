@@ -33,7 +33,6 @@ WooCommerce is required. CartBay does not initialize its recovery runtime when W
 | PHP | PHP `8.2` or newer. Use PHP `8.3+` when possible. |
 | Server cron | Recommended so Action Scheduler can process jobs promptly. |
 | HTTPS | Recommended for checkout, restore links, and admin security. |
-| File permissions | WordPress uploads directory must be writable if CartBay file logs are enabled. |
 
 ## Email Service
 
@@ -62,9 +61,11 @@ Related docs:
 - [Settings](/cartbay/user-guide/settings/) explains mail environment warnings and log links.
 - [Troubleshooting](/cartbay/user-guide/troubleshooting/) explains common delivery and queue problems.
 
-## License
+## License <span class="cb-badge cb-badge--pro">Pro</span>
 
-A WPAnchorBay license key is required for private updates and support checks. The key is provided after purchase and can also be found in the WPAnchorBay account dashboard.
+The free CartBay plugin needs **no license key** — it installs from WordPress.org and updates through WordPress like any other free plugin.
+
+A WPAnchorBay license key is required only for [CartBay Pro](/cartbay/getting-started/license-activation/) <span class="cb-badge cb-badge--pro">Pro</span>, which enables private updates and support checks. The Pro key is provided after purchase and can also be found in the WPAnchorBay account dashboard.
 
 Read [License Activation](/cartbay/getting-started/license-activation/).
 
@@ -79,4 +80,4 @@ CartBay supports both classic checkout and WooCommerce Block Checkout. Test the 
 - Email delivery service is configured.
 - Store consent wording is approved.
 - Action Scheduler is processing jobs.
-- CartBay license key is available.
+- CartBay Pro license key is available — only if you are running CartBay Pro. <span class="cb-badge cb-badge--pro">Pro</span>

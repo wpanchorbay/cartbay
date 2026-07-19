@@ -1,15 +1,19 @@
 ---
 title: License Activation
-description: Activate a CartBay license key, learn where to find it, and understand license checks, dev domains, and support options.
+description: Activate a CartBay Pro license key, learn where to find it, and understand license checks and support options.
 ---
 
-CartBay uses a WPAnchorBay license key for private updates and support checks. Activate the license after installing the plugin and before relying on update delivery.
+:::note[CartBay Pro]
+License Activation applies to [CartBay Pro](/cartbay/getting-started/license-activation/) <span class="cb-badge cb-badge--pro">Pro</span> only. The free CartBay plugin needs **no license key** — it installs from WordPress.org and updates through WordPress normally. You only need a key if you have purchased and installed the Pro add-on.
+:::
+
+CartBay Pro <span class="cb-badge cb-badge--pro">Pro</span> uses a WPAnchorBay license key for private updates and support checks. Activate the license after installing the Pro add-on and before relying on Pro update delivery.
 
 ## Where to Find Your License Key
 
-Most users receive the license key in the purchase confirmation email after buying CartBay.
+Most users receive the license key in the purchase confirmation email after buying CartBay Pro.
 
-You can also retrieve your license key by logging in to your WPAnchorBay account dashboard at [wpanchorbay.com](https://wpanchorbay.com/).
+You can also retrieve your CartBay Pro license key by logging in to your WPAnchorBay account dashboard at [wpanchorbay.com](https://wpanchorbay.com/).
 
 If you cannot find your key or need account help, contact WPAnchorBay support at [support@wpanchorbay.com](mailto:support@wpanchorbay.com).
 
@@ -58,7 +62,6 @@ Once activated, you will see the following license states -
 | Inactive | No active license state is stored locally. |
 | Expired | The license server reported an expired license. |
 | Invalid | The stored key was rejected. |
-| Dev Mode | Development-domain bypass is active. |
 | Server Error | The license server was unreachable. Runtime recovery features continue. |
 
 ## Actions

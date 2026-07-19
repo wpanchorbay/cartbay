@@ -4,7 +4,7 @@ description: Understand how CartBay works and launch it with the recommended fir
 ---
 Understand how CartBay works and launch it with the recommended first-run setup, verification steps, and safe production checklist.
 
-Before starting, review [Requirements](/cartbay/getting-started/requirements/), complete [Installation](/cartbay/getting-started/installation/), and keep your license key active ([License Activation](/cartbay/getting-started/license-activation/)).
+Before starting, review [Requirements](/cartbay/getting-started/requirements/) and complete [Installation](/cartbay/getting-started/installation/). The free plugin needs no license key. If you also run [CartBay Pro](/cartbay/getting-started/license-activation/) <span class="cb-badge cb-badge--pro">Pro</span>, keep its license active ([License Activation](/cartbay/getting-started/license-activation/)).
 
 
 ## 1. Configure Capture
@@ -53,9 +53,11 @@ Open [Templates](/cartbay/user-guide/templates/):  **WooCommerce > CartBay > Tem
 
 Open [Offers](/cartbay/user-guide/offers/):  **WooCommerce > CartBay > Offers** or **WooCommerce > Settings > Cart > Offers**
 
-Recommended first launch:
+**Free:** the free plugin uses a **single static coupon code** that references an existing WooCommerce coupon. Create the coupon in **WooCommerce > Marketing > Coupons** first, then enter its code in Offers. CartBay inserts that code into recovery emails as plain text on steps where the coupon is enabled.
 
-| Setting | Recommended value |
+**Recommended coupon setup <span class="cb-badge cb-badge--pro">Pro</span>:** [CartBay Pro](/cartbay/getting-started/license-activation/) replaces the static code with a unique, single-use coupon generated per abandoned cart — email-restricted, with an expiry, and auto-applied when the shopper restores their cart. Generated coupons use fixed-cart defaults out of the box:
+
+| Setting | Value |
 |---|---|
 | Coupon Type | Fixed Cart Discount |
 | Coupon Amount | A margin-safe amount, such as `10` in store currency |

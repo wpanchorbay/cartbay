@@ -12,10 +12,9 @@ CartBay is a WooCommerce abandoned cart recovery plugin. It captures consented c
 - Stores recovery sessions using WooCommerce order objects, not custom database tables.
 - Detects abandonment through Action Scheduler.
 - Sends three WooCommerce-native recovery emails.
-- Generates optional single-use recovery coupons.
+- Adds a recovery coupon to emails — a single static WooCommerce coupon code in the free plugin, or unique single-use coupons generated per cart with [CartBay Pro](/cartbay/getting-started/license-activation/) <span class="cb-badge cb-badge--pro">Pro</span>.
 - Restores carts through secure hashed-token links.
-- Tracks notification, restore, recovery, and revenue analytics.
-- Provides optional protected REST and WordPress Abilities access for AI agents.
+- Tracks notification, recovery, and revenue analytics.
 
 ## Where CartBay Appears
 
@@ -23,7 +22,7 @@ CartBay is a WooCommerce abandoned cart recovery plugin. It captures consented c
 - WooCommerce settings tab: `WooCommerce > Settings > Cart`.
 - Recovery email editing: WooCommerce email settings, linked from `CartBay > Templates`.
 - WooCommerce logs: source `cartbay`.
-- CartBay file logs: hidden Logs section linked from `CartBay > Settings`.
+- CartBay logs: hidden Logs section linked from `CartBay > Settings`.
 
 ## Recovery Workflow
 
@@ -41,11 +40,11 @@ CartBay is a WooCommerce abandoned cart recovery plugin. It captures consented c
 
 1. [Requirements](../requirements/)
 2. [Installation](../installation/)
-3. [License Activation](../license-activation/)
+3. [Setup Wizard](../setup-wizard/)
 4. [Quick Start](../quick-start/)
 
 ## Important Notes
 
-- CartBay is privately distributed by WPAnchorBay and is not hosted on WordPress.org.
+- CartBay's core recovery workflow is free and installs from WordPress.org — no license key required. [CartBay Pro](/cartbay/getting-started/license-activation/) <span class="cb-badge cb-badge--pro">Pro</span> is a separate, licensed add-on that installs alongside the free plugin and unlocks advanced features such as generated single-use coupons and advanced analytics.
 - A working email delivery service is strongly recommended before enabling recovery emails. See [Email Delivery Setup](../email-delivery-setup/) for setup steps.
 - Store owners remain responsible for consent wording, privacy policy updates, and local compliance requirements.
