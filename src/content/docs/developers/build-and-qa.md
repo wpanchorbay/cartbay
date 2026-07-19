@@ -3,7 +3,7 @@ title: Build & QA
 description: Development setup, coding standards, build commands, static analysis, plugin check policy, i18n, and release verification for CartBay contributors.
 ---
 
-CartBay is a private premium WooCommerce plugin. Contributions should preserve WooCommerce-native APIs, HPOS compatibility, Action Scheduler usage, and private licensing behavior.
+CartBay is a free WooCommerce plugin distributed on WordPress.org, with an optional CartBay Pro add-on. Contributions should preserve WooCommerce-native APIs, HPOS compatibility, and Action Scheduler usage, and must keep the free plugin passing `wp plugin check` cleanly for WordPress.org.
 
 ## Requirements
 
@@ -22,7 +22,9 @@ composer test
 composer plugin-check
 ```
 
-`composer plugin-check` intentionally ignores WordPress.org-only findings for private updater and proprietary license metadata.
+The **free** plugin ships on WordPress.org and must pass `composer plugin-check` (`wp plugin check`) cleanly, with no ignored findings.
+
+The private updater and proprietary license metadata that plugin-check flags for WordPress.org apply only to the **CartBay Pro** add-on, which is distributed off-directory; those findings are scoped to Pro and do not apply to the free plugin. <span class="cb-badge cb-badge--pro">Pro</span>
 
 ## JavaScript Commands
 
@@ -52,10 +54,9 @@ Treat these as high-risk changes:
 
 - Checkout capture.
 - Restore/cart mutation.
-- Coupons and subscriptions.
+- Coupons and subscriptions. <span class="cb-badge cb-badge--pro">Pro</span>
 - Order matching and recovered revenue.
-- License enforcement.
-- Agent write/contact/sensitive/destructive actions.
+- License enforcement. <span class="cb-badge cb-badge--pro">Pro</span>
 - Data deletion and uninstall behavior.
 
 ## Verification Checklist
@@ -66,8 +67,7 @@ Treat these as high-risk changes:
 - Abandonment jobs mark inactive sessions abandoned.
 - All three email steps send in order.
 - Restore links rebuild cart and redirect to checkout.
-- Coupons validate only in the matching recovery flow.
+- Generated coupons validate only in the matching recovery flow. <span class="cb-badge cb-badge--pro">Pro</span>
 - Recovered orders are attributed correctly.
 - Unsubscribe suppresses future capture/recovery for the email.
-- Agent endpoints remain disabled by default.
 - Logs do not expose raw tokens or full license keys.

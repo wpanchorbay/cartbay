@@ -16,9 +16,9 @@ CartBay recovery emails are WooCommerce email classes. This lets CartBay use Woo
 
 WooCommerce email IDs:
 
-- `cartbay_email_recovery_1`
-- `cartbay_email_recovery_2`
-- `cartbay_email_recovery_3`
+- `cartbay_recovery_1`
+- `cartbay_recovery_2`
+- `cartbay_recovery_3`
 
 ## Template Files
 
@@ -63,7 +63,7 @@ Transient context keys use `cartbay_notification_ctx_{notification_id}` so mail 
 
 ## Provider Delivery Integration
 
-WordPress `wp_mail_succeeded` only confirms WordPress accepted the send. If an ESP integration can confirm delivery, it may fire:
+WordPress `wp_mail_succeeded` only confirms WordPress accepted the send. `cartbay_mark_notification_delivered` is a **reserved, optional** integration point — CartBay does not fire it itself. An ESP integration that can confirm true delivery may fire it to advance a notification to the `delivered` state:
 
 ```php
 do_action( 'cartbay_mark_notification_delivered', $notification_id );
