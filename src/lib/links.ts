@@ -105,9 +105,6 @@ export const PAGE_LINKS = {
 
   /** Developer Architecture */
   developerArchitecture: `${BASE_PATH}/developers/architecture/`,
-
-  /** Agent Access */
-  agentAccess: `${BASE_PATH}/agents/agent-access/`,
 } as const;
 
 // ---------------------------------------------------------------------------
@@ -142,6 +139,6 @@ export const FEED_LINKS = {
   /** LLM-friendly full documentation */
   llmsFull: buildAbsoluteUrl("/llms-full.txt"),
 
-  /** MCP server documentation page */
-  mcpDocs: buildAbsoluteUrl("/agents/agent-access/"),
+  /** Docs discovery / AI & crawler governance page */
+  mcpDocs: buildAbsoluteUrl("/others/ai-crawler/"),
 } as const;

@@ -37,8 +37,12 @@ export default defineConfig({
     starlight({
       title: "CartBay Documentation",
       description:
-        "End-user, developer, and AI-agent documentation for CartBay abandoned cart recovery for WooCommerce.",
-      customCss: ["./src/styles/home.css", "./src/styles/content-images.css"],
+        "End-user and developer documentation for CartBay abandoned cart recovery for WooCommerce.",
+      customCss: [
+        "./src/styles/home.css",
+        "./src/styles/content-images.css",
+        "./src/styles/badges.css",
+      ],
       logo: {
         src: LOGO_SVG_PATH,
         replacesTitle: false,
@@ -120,14 +124,6 @@ export default defineConfig({
             { label: "Hooks & Jobs", slug: "developers/hooks-and-jobs" },
             { label: "Templates & Emails", slug: "developers/templates-and-emails" },
             { label: "Build & QA", slug: "developers/build-and-qa" },
-          ],
-        },
-        {
-          label: "AI Agents",
-          items: [
-            { label: "Agent Access", slug: "agents/agent-access" },
-            { label: "Automation Workflows", slug: "agents/automation-workflows" },
-            { label: "Safety Rules", slug: "agents/safety-rules" },
           ],
         },
         {
