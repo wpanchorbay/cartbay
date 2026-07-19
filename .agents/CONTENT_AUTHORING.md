@@ -178,3 +178,40 @@ Use this for risks or things users commonly miss.
 Use this for destructive, security-sensitive, or irreversible actions.
 :::
 ````
+
+---
+
+## 8. Feature badges (Free / Pro)
+
+CartBay documents one product family with a **free plugin** (WordPress.org) and a **Pro add-on**
+(licensed). Whenever a page describes a capability that is **Pro-only**, mark it with the reusable **PRO
+badge** so readers can tell at a glance what requires a license.
+
+The badge is defined once in `src/styles/badges.css` (registered in `astro.config.mjs`), so it works in
+both `.md` and `.mdx` with no import. Use this exact snippet:
+
+````markdown
+<span class="cb-badge cb-badge--pro">Pro</span>
+````
+
+Placement:
+
+- **Whole subsection is Pro** → put the badge at the end of that heading, and do not also write
+  "(CartBay Pro)" in the heading text:
+
+  ````markdown
+  #### Restore Clicks <span class="cb-badge cb-badge--pro">Pro</span>
+  ````
+
+- **A Pro feature named inline** (prose or a table cell) → put the badge right after the name:
+
+  ````markdown
+  Export Sessions CSV <span class="cb-badge cb-badge--pro">Pro</span> streams the current session view.
+  ````
+
+- For a longer explanation of a Pro-only area, pair the badge with a `:::note[CartBay Pro]` aside that links
+  to the [License Activation](/cartbay/getting-started/license-activation/) page.
+
+Do **not** badge free features. When in doubt about whether something is Free or Pro, check the plugin code —
+never guess.
+
