@@ -22,7 +22,7 @@ head:
   - tag: meta
     attrs:
       property: og:description
-      content: End-user, developer, and AI-agent documentation for CartBay abandoned cart recovery for WooCommerce.
+      content: End-user and developer documentation for CartBay abandoned cart recovery for WooCommerce.
   # FEED_LINKS.ogImage — cannot use JS expressions in YAML frontmatter
   - tag: meta
     attrs:
@@ -63,7 +63,7 @@ head:
       name: twitter:image:alt
       content: CartBay Documentation – WPAnchorBay
 hero:
-  tagline: Recover abandoned WooCommerce checkout revenue with consented capture, a three-email sequence, restore links, coupons, analytics, and safe AI-agent controls.
+  tagline: Recover abandoned WooCommerce checkout revenue with consented capture, a three-email sequence, restore links, coupons, and analytics.
   image:
     alt: CartBay by WPAnchorBay
     file: ../../../public/assets/cartbay-icon.svg
@@ -88,6 +88,8 @@ import WPAnchorBayFooter from '../../components/WPAnchorBayFooter.astro';
 
 CartBay helps WooCommerce stores recover abandoned checkout revenue. It captures opted-in checkout visitors, tracks abandoned carts, sends a focused three-email recovery sequence, restores carts through secure links, offers optional recovery coupons, and reports recovered revenue inside the WordPress admin.
 
+CartBay's core recovery workflow is **free** and available on [WordPress.org](https://wordpress.org/plugins/cartbay-abandoned-cart-recovery-for-woocommerce/) — no license key required. [CartBay Pro](/cartbay/getting-started/license-activation/) is a separate licensed add-on that layers on advanced analytics, CSV export, dynamic per-session coupons, and licensed private updates.
+
 ## How CartBay Works
 
 
@@ -102,14 +104,14 @@ CartBay captures a customer's email from the checkout page when they enter it (c
 - Action Scheduler-powered abandonment detection and email scheduling.
 - Three recovery email steps with editable WooCommerce email templates.
 - Secure restore and unsubscribe links using hashed tokens.
-- Optional CartBay-generated recovery coupons with validation safeguards.
-- Overview analytics for tracked carts, abandoned carts, recoveries, revenue, restore clicks, and failed restores.
+- Optional recovery coupons: insert a static coupon code in the free plugin, or generate unique per-session coupons with validation safeguards in CartBay Pro <span class="cb-badge cb-badge--pro">Pro</span>.
+- Overview analytics for tracked carts, abandoned carts, recoveries, revenue, and recovery rate.
+- Advanced analytics — restore clicks, click-to-recovery rate, and failed restores — with CSV export. <span class="cb-badge cb-badge--pro">Pro</span>
 - Notification tracking for queued, attempted, sent, failed, retry-queued, delivered, and canceled recovery emails.
-- Optional protected AI-agent REST and WordPress Abilities access.
 
 ## Main Workflows
 
-1. Install CartBay and activate the license.
+1. Install the free CartBay plugin from WordPress.org and activate it — no license key required.
 2. Configure checkout capture, consent text, and abandonment timeout.
 3. Set the three-email recovery sequence timing.
 4. Customize recovery email templates in WooCommerce email settings.
@@ -121,7 +123,7 @@ CartBay captures a customer's email from the checkout page when they enter it (c
 
 <CardGrid stagger>
 	<Card title="Getting Started" icon="sprout" href="/cartbay/getting-started/introduction/">
-		Learn what CartBay does, confirm requirements, install the plugin, activate your license, and launch your first recovery sequence.
+		Learn what CartBay does, confirm requirements, install the free plugin, and launch your first recovery sequence.
 	</Card>
 	<Card title="User Guide" icon="book-user" href="/cartbay/user-guide/overview/">
 		Configure CartBay admin sections for capture, recovery sequence, notifications, templates, offers, settings, and troubleshooting.
@@ -129,16 +131,13 @@ CartBay captures a customer's email from the checkout page when they enter it (c
 	<Card title="Developers" icon="file-braces-corner" href="/cartbay/developers/architecture/">
 		Review CartBay architecture, storage, REST routes, hooks, background jobs, templates, emails, build, and QA references.
 	</Card>
-	<Card title="AI Agents" icon="astroid" href="/cartbay/agents/agent-access/">
-		Use protected agent access, safe automation workflows, and operational guardrails for CartBay AI-agent integrations.
-	</Card>
 </CardGrid>
 
 ## Quick Links
 
 - [Requirements](/cartbay/getting-started/requirements/)
 - [Installation](/cartbay/getting-started/installation/)
-- [License Activation](/cartbay/getting-started/license-activation/)
+- [License Activation](/cartbay/getting-started/license-activation/) <span class="cb-badge cb-badge--pro">Pro</span>
 - **[Quick Start](/cartbay/getting-started/quick-start/)**
 - [CartBay Overview](/cartbay/user-guide/overview/)
 - [Capture](/cartbay/user-guide/capture/)
@@ -155,11 +154,10 @@ CartBay captures a customer's email from the checkout page when they enter it (c
 - Store administrators who need to configure capture, emails, coupons, and reporting.
 - Support teams who need to diagnose email delivery, restore links, coupons, or recovery attribution.
 - Developers who need architecture, storage, REST API, hooks, templates, and QA details.
-- AI agents and automation systems that need safe, least-privilege CartBay workflows.
 
 ## How to Navigate This Documentation
 
-Start with Getting Started if you are installing CartBay for the first time. Use the User Guide when configuring a specific CartBay admin section. Use Developers for architecture, integration, and extension details. Use AI Agents when enabling automation or MCP-based workflows. Use Others for FAQ, discovery endpoints, and documentation metadata.
+Start with Getting Started if you are installing CartBay for the first time. Use the User Guide when configuring a specific CartBay admin section. Use Developers for architecture, integration, and extension details. Use Others for FAQ, discovery endpoints, and documentation metadata.
 
 <p style="text-align:center;margin:4rem 0 2rem;">
 	<a class="license-center-button-outlined" href="/cartbay/getting-started/introduction/">Getting Started</a>
