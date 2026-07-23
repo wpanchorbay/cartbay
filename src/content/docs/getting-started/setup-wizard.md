@@ -20,6 +20,7 @@ An introduction to CartBay. The setup wizard helps you configure a 3-email recov
 Configure when carts are considered abandoned and how shoppers consent to recovery emails.
 
 * **Consent Text**: The text that appears beside the checkout consent checkbox. This tells shoppers that CartBay may save their email and cart to send recovery reminders.
+* **Consent Checkbox Default State**: Choose whether the checkout consent checkbox starts **unchecked** (recommended) or **checked**. CartBay only captures a shopper's email and cart while the box is checked, so leaving it unchecked keeps capture opt-in.
 * **Abandonment Timeout**: The time (in minutes) CartBay waits after the shopper's last interaction with checkout before marking the cart as abandoned.
 * **Recovery Email Schedule**: Configure the delay intervals for the 3-email recovery sequence (e.g., minutes, hours, or days) after a cart becomes abandoned.
 

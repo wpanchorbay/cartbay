@@ -89,7 +89,7 @@ Common placeholders include `{site_title}`, `{customer_email}`, `{restore_url}`,
 
 #### Why is my coupon placeholder empty?
 
-The email step probably does not have coupons enabled. Enable coupons for that step in Recovery Sequence and configure the coupon in Offers.
+Either the email step does not have coupons enabled — enable it in Recovery Sequence and set the coupon in Offers — or the code you configured is missing or unusable (no matching WooCommerce coupon, expired, or out of uses), in which case CartBay deliberately leaves it out of the email so shoppers do not get a code that fails. Check the Offers screen for a warning explaining which it is.
 
 ## Offers and Coupons
 

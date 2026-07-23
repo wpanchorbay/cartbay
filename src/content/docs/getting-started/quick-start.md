@@ -36,7 +36,7 @@ Default sequence:
 |---|---:|---|
 | Email 1 | 45 minutes after abandonment | Off |
 | Email 2 | 24 hours after abandonment | Off |
-| Email 3 | 72 hours after abandonment | On |
+| Email 3 | 72 hours after abandonment | Off |
 
 Keep the default timing for a first launch unless you already have a tested recovery cadence.
 

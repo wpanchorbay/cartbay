@@ -80,6 +80,7 @@ In CartBay Free, Offers is a single static coupon code, so the rows about coupon
 |---|---|---|
 | Coupon not generated | Coupon is disabled for that recovery step. | Enable coupon use on the step in Recovery Sequence. |
 | Coupon placeholder empty | Email step does not include a coupon. | Use coupon placeholders only in coupon-enabled steps. |
+| Coupon missing even though the step has one enabled | The code set in Offers is missing or unusable (no matching WooCommerce coupon, expired, or out of uses), so CartBay omitted it at send time. | Check the Offers screen warning; create or publish a valid WooCommerce coupon, or fix its expiry / usage limit. |
 | Coupon not applied on restore | Coupon expired, email/session identity did not match, or the cart includes a subscription product. | Open **WooCommerce > Settings > Cart > Offers > View coupon history and details** and review the cart contents. |
 | Discount too high | Percentage discount applied to the full cart total. | Use a fixed-cart discount or lower the percentage amount. |
 

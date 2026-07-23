@@ -98,9 +98,9 @@ Consent rules vary by region. Confirm the wording and default checkbox state wit
 
 ## Consent Checkbox Default State
 
-`Consent Checkbox Default State` controls whether the checkout consent checkbox starts checked or unchecked.
+`Consent Checkbox Default State` controls whether the checkout consent checkbox starts checked or unchecked. You can also set this in the [setup wizard](/cartbay/getting-started/setup-wizard/)'s Consent & Timing step.
 
-Default: checked.
+Default: unchecked (recommended). Leaving it unchecked keeps capture opt-in, which most privacy regimes expect.
 
 Options:
 
@@ -157,7 +157,7 @@ On classic checkout, CartBay:
 On Block Checkout, CartBay:
 
 - Registers a WooCommerce additional checkout field with ID `cartbay/marketing-consent` in the contact location.
-- Applies the configured default checked state.
+- Applies the configured default checkbox state (checked or unchecked).
 - Finds the contact email input and consent checkbox in the checkout block DOM.
 - Reads Store API cart data when available.
 - Stores `cartbay_session_id` in browser `sessionStorage`.

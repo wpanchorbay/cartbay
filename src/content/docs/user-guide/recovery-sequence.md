@@ -73,7 +73,7 @@ Recommended use:
 
 Default timing: `72 hours` after abandonment.
 
-Default coupon: on.
+Default coupon: off.
 
 Purpose: make a final recovery attempt with the strongest conversion message.
 
@@ -81,7 +81,7 @@ Recommended use:
 
 - Create a clear reason to return now.
 - Use urgency carefully and truthfully.
-- Include the recovery coupon when the store uses discounts.
+- This is the strongest place for a coupon if your store uses recovery discounts — enable **Include a recovery coupon** here when you want one.
 
 ## Timing Controls
 
@@ -112,6 +112,7 @@ When enabled (CartBay Free):
 - CartBay inserts the single **static coupon code** you configured in [Offers](/cartbay/user-guide/offers/) into that email step.
 - The static code references an existing WooCommerce coupon; CartBay adds it to the email as plain text and does not create, modify, or expire it.
 - The `{coupon_code}` placeholder resolves to that static code. The same code is used for every coupon-enabled step and every session.
+- If the configured code is missing or unusable at send time (no matching coupon, expired, or out of uses), CartBay leaves it out of that email instead of sending a code that fails — see [Safe Send-Time Handling](/cartbay/user-guide/offers/#safe-send-time-handling).
 
 When disabled:
 
@@ -123,7 +124,7 @@ CartBay Free inserts a single static coupon code. Generating a **unique per-sess
 :::
 
 :::tip
-The default sequence keeps coupons off for Email 1 and Email 2, and uses a coupon only in Email 3. This avoids training shoppers to expect immediate discounts.
+The default sequence keeps coupons **off for all three emails**, so no discount goes out unless you deliberately enable one. Email 3 is the recommended place to add a coupon if your store uses recovery discounts.
 :::
 
 ## Background Processing
@@ -153,7 +154,9 @@ Failed sends can be retried up to three attempts. Retry delay is `15 * attempts`
 
 Every recovery email includes a secure restore link. Restore links use the `cartbay_restore` query parameter and hashed token storage.
 
-When clicked, CartBay validates the token, rebuilds the cart when possible, stores checkout attribution in the WooCommerce session, and redirects the shopper to checkout. In CartBay Free the shopper enters the static coupon code from the email manually; automatically applying a unique per-session coupon on restore is part of [CartBay Pro](/cartbay/getting-started/license-activation/) <span class="cb-badge cb-badge--pro">Pro</span>.
+When clicked, CartBay validates the token, rebuilds the shopper's cart, stores checkout attribution in the WooCommerce session, and redirects the shopper to checkout. The restore **merges the saved items into the shopper's current cart** rather than replacing it, **clamps each quantity to what is currently in stock**, and reports a per-item outcome — so a cart is still restored even when some items are partly or fully out of stock, and a shopper who reopens the same link is not given doubled quantities.
+
+In CartBay Free the shopper enters the static coupon code from the email manually; automatically applying a unique per-session coupon on restore is part of [CartBay Pro](/cartbay/getting-started/license-activation/) <span class="cb-badge cb-badge--pro">Pro</span>.
 
 ## Unsubscribe Links
 

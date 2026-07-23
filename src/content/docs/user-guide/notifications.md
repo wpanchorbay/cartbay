@@ -166,11 +166,11 @@ A table below the status notice shows the resolved mail configuration:
 
 | Field | Source |
 |---|---|
-| **From email** | Resolved through the `wp_mail_from` filter — reflects whatever your SMTP plugin or custom code sets. |
-| **From name** | Resolved through the `wp_mail_from_name` filter. |
+| **From email** | Your **WooCommerce store sender** address (`WooCommerce > Settings > Emails`). Falls back to the site admin email if unset. |
+| **From name** | Your **WooCommerce store sender** name (`WooCommerce > Settings > Emails`). Falls back to the site title if unset. |
 | **Delivery service** | The detected plugin or integration name. Only shown when a service is found. |
 
-These values represent what WordPress would use when sending a recovery email. If your SMTP plugin overrides the from address, the overridden value appears here.
+Recovery emails are sent with your WooCommerce store sender details — the same From name and address as your other WooCommerce emails. Change them under `WooCommerce > Settings > Emails`. If your SMTP plugin overrides the from address at delivery, the overridden value is what actually reaches the inbox.
 
 ### Sending a Test Email
 
@@ -178,7 +178,7 @@ These values represent what WordPress would use when sending a recovery email. I
 2. Click **Send Test Email**.
 3. A status message appears next to the button. Check the recipient inbox within a few minutes.
 
-The test email uses `wp_mail()` — the standard WordPress mail function. This means it works with **any** SMTP plugin (WP Mail SMTP, Post SMTP, FluentSMTP, Brevo, Mailgun, SendGrid, etc.). If the send fails, CartBay captures the real error WordPress raised on the `wp_mail_failed` hook and appends it to the result message — for example, "Failed to send test email. SMTP Error: Could not authenticate." — instead of only a generic failure notice.
+The test email uses `wp_mail()` — the standard WordPress mail function — and is sent from the same WooCommerce store sender as real recovery emails, so what you receive reflects the actual From name and address shoppers see. This means it works with **any** SMTP plugin (WP Mail SMTP, Post SMTP, FluentSMTP, Brevo, Mailgun, SendGrid, etc.). If the send fails, CartBay captures the real error WordPress raised on the `wp_mail_failed` hook and appends it to the result message — for example, "Failed to send test email. SMTP Error: Could not authenticate." — instead of only a generic failure notice.
 
 ### When the Test Fails
 

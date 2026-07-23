@@ -1,6 +1,6 @@
 ---
 title: Offers
-description: Set the static recovery coupon code CartBay Free adds to recovery emails, and learn how CartBay Pro generates unique per-session coupons with validation and expiry.
+description: Set the static recovery coupon code CartBay Free adds to recovery emails, with setup checks and safe send-time handling, and learn how CartBay Pro generates unique per-session coupons with validation and expiry.
 ---
 
 The Offers section controls the coupon CartBay adds to recovery emails when a recovery step includes one. In CartBay Free, Offers holds a single **static coupon code** that references an existing WooCommerce coupon. CartBay Pro replaces it with unique, per-session generated coupons.
@@ -25,8 +25,26 @@ In CartBay Free, Offers is a single **static coupon code** field, stored in `car
 - The same static code is used for every coupon-enabled step and every recovery session, and shoppers enter it manually at checkout.
 
 :::tip
-Create the WooCommerce coupon first (`Marketing > Coupons`), then paste its exact code into Offers. If the code does not match a real WooCommerce coupon, the email will show a code that applies no discount.
+Create the WooCommerce coupon first (`Marketing > Coupons`), then paste its exact code into Offers. CartBay checks the code and warns you on the settings screen when it can't be used, and leaves an unusable code out of recovery emails rather than sending one that fails at checkout (see below).
 :::
+
+## Coupon Setup Checks
+
+CartBay reviews your recovery coupon configuration and shows a notice on the CartBay settings screens when something needs your attention:
+
+- A recovery email has **Include a recovery coupon** enabled, but no coupon code is set in Offers. The notice names the email step(s) so you know where to add one.
+- The configured code has **no matching WooCommerce coupon** (it was never created, or the coupon is a draft or in the trash).
+- The coupon has **expired**.
+- The coupon has **reached its usage limit**.
+- The coupon is **restricted to specific email addresses**. Abandoned-cart shoppers rarely match, so it will usually fail — use an unrestricted coupon for recovery emails.
+
+A coupon with cart restrictions (a minimum spend, or specific products or categories) shows an informational note instead: WooCommerce enforces those at checkout, so some shoppers may not qualify.
+
+## Safe Send-Time Handling
+
+If the configured coupon is missing or clearly unusable at the moment an email is sent — no matching coupon, expired, or out of uses — CartBay **leaves it out of that recovery email** instead of sending a code that would fail at checkout. The email still goes out; it just omits the broken discount, and the omission is recorded in the session's event history.
+
+This matters most later in a sequence: a coupon that was valid when you set it up can expire or run out of uses before the final email is sent, and this check catches that automatically.
 
 ## Dynamic Recovery Coupons <span class="cb-badge cb-badge--pro">Pro</span>
 
