@@ -88,9 +88,14 @@ Filters:
 | Filter | Purpose |
 |---|---|
 | `cartbay_email_coupon` | Override the coupon code/context injected into a recovery email. |
+| `cartbay_offers_coupon_notice_relevant` | Toggle whether the free coupon-configuration notices render on the CartBay settings screens. Return `false` to suppress them (e.g. an add-on that supplies its own coupons and ignores the static code). |
 | `cartbay_overview_metric_cards` | Add or modify Overview dashboard metric cards. |
 | `cartbay_settings_section_pre_fields` | Inject fields before a settings section renders. |
 | `cartbay_wizard_steps` | Add or reorder setup-wizard steps (e.g. Pro's License step). |
+
+:::note[Send-time coupon suppression]
+Before applying `cartbay_email_coupon`, the free plugin validates its own configured static code and passes an **empty** default into the filter when that code is missing or unusable (no matching coupon, expired, or usage-exhausted). The filter still runs, so an add-on that supplies its own coupon (like CartBay Pro) overrides the empty default and is unaffected. When the code is suppressed and nothing overrides it, CartBay records a `coupon_suppressed` session event (with `step`, `code`, and `reason`) via `cartbay_session_event`.
+:::
 
 Actions:
 

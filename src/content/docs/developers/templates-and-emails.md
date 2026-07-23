@@ -43,7 +43,7 @@ Templates include hidden preheader support, body content, restore button, plain 
 - `{coupon_expiry}`
 - `{unsubscribe_url}`
 
-Restore and unsubscribe URLs are generated per send using hashed token storage. Coupon placeholders depend on per-step coupon settings and generated coupon state.
+Restore and unsubscribe URLs are generated per send using hashed token storage. Coupon placeholders depend on per-step coupon settings and coupon state: in CartBay Free `{coupon_expiry}` is empty (the static coupon has no CartBay-managed expiry), and the email omits the expiry line when it is empty. If the configured static code is missing or unusable at send time, CartBay suppresses it and `{coupon_code}` resolves to empty, so no coupon block is rendered.
 
 ## Notification Lifecycle
 

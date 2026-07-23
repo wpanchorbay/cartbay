@@ -59,7 +59,7 @@ CartBay Pro adds its own persisted event/analytics data and dynamic coupon conte
 
 ## Event Names
 
-Session lifecycle events include `captured`, `updated`, `abandoned`, `email_sent`, `email_failed`, `restore_clicked`, `cart_restore_started`, `cart_restored`, `cart_restore_partial`, `cart_restore_failed`, `completed_before_abandonment`, `recovered`, and `unsubscribed`.
+Session lifecycle events include `captured`, `updated`, `abandoned`, `email_sent`, `email_failed`, `coupon_suppressed`, `restore_clicked`, `cart_restore_started`, `cart_restored`, `cart_restore_partial`, `cart_restore_failed`, `completed_before_abandonment`, `recovered`, and `unsubscribed`.
 
 The **free** plugin fires each event through the `cartbay_session_event` action (see [Hooks & Jobs](/cartbay/developers/hooks-and-jobs/)) but does **not** persist an event history. The stored, queryable event log (`_cartbay_pro_events`) is a Pro feature. <span class="cb-badge cb-badge--pro">Pro</span>
 
