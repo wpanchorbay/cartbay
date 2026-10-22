@@ -62,7 +62,9 @@ Once activated, you will see the following license states -
 | Inactive | No active license state is stored locally. |
 | Expired | The license server reported an expired license. |
 | Invalid | The stored key was rejected. |
-| Server Error | The license server was unreachable. Runtime recovery features continue. |
+| Server Error | The license server could not be reached or gave no usable answer (a network error, an error response, an empty response, or a 429 or 5xx status). Pro stays active, nothing is cached as invalid, and Pro does not ask the server again for 15 minutes. |
+
+A real rejection from the license server (expired, invalid, inactive, not activated, or activation limit reached) is cached for 12 hours, and Pro features stop.
 
 ## Actions
 
