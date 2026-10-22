@@ -84,4 +84,4 @@ Checkout consent + email
 - Classic checkout and Block Checkout share the same capture REST endpoint.
 - Restore and unsubscribe use query parameters, not REST routes.
 - `wp_mail_succeeded` means WordPress accepted mail, not provider-confirmed delivery.
-- The free plugin requires PHP 8.2+ (both the plugin header and Composer); 8.3+ is recommended for development.
+- The free plugin requires PHP 8.0+ (both the plugin header and Composer); 8.2+ is recommended, and 8.3+ for development.
