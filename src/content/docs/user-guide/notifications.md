@@ -39,7 +39,7 @@ The **Best Email Step** and **More** cards, the per-step recovery performance ta
 
 ### Pending Queue
 
-Pending Queue shows current recovery emails waiting to send, including first-time queued notifications and retry-queued notifications.
+Pending Queue shows recovery emails that have not been tried yet, waiting for their first send attempt. An email whose send failed and is waiting to be retried is counted under Emails Failed, not here.
 
 If this number stays high, check whether Action Scheduler is processing jobs.
 
@@ -51,7 +51,7 @@ Emails Sent shows recovery emails accepted by WordPress/WooCommerce mail or mark
 
 ### Emails Failed
 
-Emails Failed shows recovery emails tied to sessions in the selected period that ended in failed status.
+Emails Failed shows recovery emails tied to sessions in the selected period whose send is currently failed, including those waiting to be retried. A failed send is counted here straight away, without waiting for the retries to run out.
 
 Review failed rows with the Details action to find the last recorded error.
 

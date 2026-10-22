@@ -21,7 +21,7 @@ WooCommerce is required. CartBay does not initialize its recovery runtime when W
 
 | Requirement | Recommendation |
 |---|---|
-| WooCommerce | WooCommerce version `10.7` or newer. |
+| WooCommerce | WooCommerce version `10.7` or newer. Tested up to WooCommerce `11.2`. |
 | Checkout | Classic checkout or WooCommerce Block Checkout. |
 | Orders | CartBay uses WooCommerce order CRUD APIs and declares HPOS compatibility. |
 | Action Scheduler | Provided by WooCommerce and required for background jobs. |
@@ -33,6 +33,8 @@ WooCommerce is required. CartBay does not initialize its recovery runtime when W
 | PHP | PHP `8.2` or newer. Use PHP `8.3+` when possible. |
 | Server cron | Recommended so Action Scheduler can process jobs promptly. |
 | HTTPS | Recommended for checkout, restore links, and admin security. |
+
+The versions on this page are recommendations. The free plugin itself requires at least WordPress `6.6`, WooCommerce `9.8`, and PHP `8.0`.
 
 ## Email Service
 
@@ -65,7 +67,7 @@ Related docs:
 
 The free CartBay plugin needs **no license key** — it installs from WordPress.org and updates through WordPress like any other free plugin.
 
-A WPAnchorBay license key is required only for [CartBay Pro](/cartbay/getting-started/license-activation/) <span class="cb-badge cb-badge--pro">Pro</span>, which enables private updates and support checks. The Pro key is provided after purchase and can also be found in the WPAnchorBay account dashboard.
+A WPAnchorBay license key is required only for [CartBay Pro](/cartbay/getting-started/license-activation/) <span class="cb-badge cb-badge--pro">Pro</span>, which enables private updates and support checks. CartBay Pro requires the free CartBay plugin, version `1.1.1` or later. The Pro key is provided after purchase and can also be found in the WPAnchorBay account dashboard.
 
 Read [License Activation](/cartbay/getting-started/license-activation/).
 

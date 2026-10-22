@@ -101,9 +101,9 @@ Licensing applies to [CartBay Pro](/cartbay/getting-started/license-activation/)
 
 | Problem | Likely cause | Fix |
 |---|---|---|
-| License shows Server Error | License server unreachable. | Runtime recovery flows continue; retry status check later. |
+| License shows Server Error | License server unreachable or returned an error instead of an answer. | Pro stays active and runtime recovery flows continue. Pro does not ask the server again for 15 minutes; retry the status check later. |
 | Updates unavailable | No valid local license key. | Activate or check the license in **WooCommerce > Settings > Cart > Settings**. |
-| Data removed after uninstall | Delete Data on Uninstall was enabled. | Restore from backup if needed. |
+| Data removed after uninstall | Delete Data on Uninstall was enabled. Deleting CartBay Pro also removes the coupons it generated. | Restore from backup if needed. |
 
 ## Analytics Problems
 

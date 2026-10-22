@@ -164,6 +164,8 @@ Recovery emails can include an unsubscribe link using the `cartbay_unsubscribe` 
 
 When clicked, CartBay stores a hashed suppression record, marks the session suppressed, cancels pending recovery email work, and prevents future recovery messages for that email.
 
+Each recovery email's unsubscribe link stays valid after later emails in the sequence are sent, so the link in Email 1 still works once Email 2 has gone out.
+
 ## Recovery Matching
 
 CartBay marks a session recovered when a completed or processing WooCommerce order matches an abandoned CartBay session.

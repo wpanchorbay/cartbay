@@ -71,7 +71,7 @@ There  are several ways to access CartBay:
 
 ## Install CartBay Pro <span class="cb-badge cb-badge--pro">Pro</span>
 
-CartBay Pro is an optional, separately licensed add-on. It does **not** replace or unlock the free plugin in place — it installs alongside it and requires the free CartBay plugin to be installed and active first.
+CartBay Pro is an optional, separately licensed add-on. It does **not** replace or unlock the free plugin in place — it installs alongside it and requires the free CartBay plugin, version `1.1.1` or later, to be installed and active first.
 
 1. Purchase CartBay Pro from [WPAnchorBay](https://wpanchorbay.com/plugins/cartbay-abandoned-cart-recovery-for-woocommerce/).
 2. Download the **CartBay Pro** add-on ZIP from your WPAnchorBay account dashboard (this is a different file from the free WordPress.org plugin).

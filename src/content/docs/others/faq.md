@@ -25,6 +25,44 @@ No. CartBay stores recovery sessions as WooCommerce order-backed sessions and us
 
 Yes. CartBay supports classic checkout and WooCommerce Block Checkout. Block Checkout uses a WooCommerce additional checkout field in the contact section.
 
+#### WooCommerce 11 added its own abandoned cart recovery. Do I still need CartBay?
+
+Yes — they cover different halves of the funnel, and CartBay covers the half where most carts are lost.
+
+WooCommerce's feature is an experimental option under `WooCommerce > Settings > Advanced > Features`. It acts on an **order that already exists**: the shopper completed checkout, pressed *Place Order*, and did not pay. WooCommerce leaves that order in `pending` and, two hours later, sends **one** email linking back to the order's payment page.
+
+CartBay acts earlier. Most abandonment never reaches *Place Order* at all — the shopper opens checkout, starts typing, and leaves. No order is created, so WooCommerce's feature has nothing to act on. CartBay captures the consented email at that moment and recovers the cart itself.
+
+| | WooCommerce 11 feature | CartBay |
+|---|---|---|
+| Triggers on | A `pending` order created via checkout or the Store API | A consented checkout email, before any order exists |
+| Timing | One email, fixed at 2 hours | Three emails, delays configurable from 15 minutes to 7 days |
+| Consent | Uses the order's billing email | Explicit opt-in, with unsubscribe and a hashed suppression list |
+| Restores | The order's pay page | The actual cart — variations rebuilt, merged into the current cart, clamped to stock |
+| Link security | A standard order-pay URL, no expiry | Hashed token, 48-hour expiry, invalidatable |
+| Coupons | None | Static coupon with pre-send validity checks; dynamic per-session coupons in <span class="cb-badge cb-badge--pro">Pro</span> |
+| Reporting | None | Captured / reminded / recovered funnel with revenue attributed per email |
+| Manual send | Yes, a button on the order edit screen | Not yet — planned |
+
+#### Will CartBay and WooCommerce's feature both email the same shopper?
+
+No. While CartBay's capture is enabled, CartBay suppresses WooCommerce's recovery email through the `woocommerce_abandoned_cart_recovery_suppress` filter that WooCommerce provides for this purpose. A shopper never receives recovery mail from both systems.
+
+Two details worth knowing:
+
+- WooCommerce's automatic sending is **off by default** even when the feature flag is on. It must be enabled under `WooCommerce > Settings > Emails > Abandoned cart recovery`.
+- CartBay's own session records are never picked up by WooCommerce's feature. CartBay sessions are created with `created_via = cartbay`, and WooCommerce only considers orders created via `checkout` or `store-api`.
+
+To run both anyway, disable CartBay's suppression:
+
+```php
+add_filter( 'cartbay_suppress_woocommerce_recovery_email', '__return_false' );
+```
+
+Turning CartBay's capture off leaves WooCommerce's feature exactly as configured.
+
+Requires CartBay 1.1.1 or later.
+
 ## Capture
 
 #### Why is the consent checkbox not showing?
@@ -125,7 +163,7 @@ Contact `support@wpanchorbay.com`.
 
 #### Will CartBay stop working if the license server is temporarily unavailable?
 
-No. CartBay Pro <span class="cb-badge cb-badge--pro">Pro</span> fails open for license server network failures, so capture, recovery emails, and restore flows keep running. The free plugin has no license check and is never affected.
+No. CartBay Pro <span class="cb-badge cb-badge--pro">Pro</span> fails open for license server outages (network errors, error responses, empty responses, and 429 or 5xx statuses), so capture, recovery emails, and restore flows keep running. The free plugin has no license check and is never affected.
 
 ## Data and Privacy
 
@@ -139,7 +177,7 @@ CartBay creates a suppression record, marks the session suppressed, and cancels 
 
 #### Can I delete CartBay data on uninstall?
 
-Yes. Enable `Delete Data on Uninstall` in Settings before deleting the plugin. Leave it disabled if you may reinstall CartBay later.
+Yes. Enable `Delete Data on Uninstall` in Settings before deleting the plugin. Leave it disabled if you may reinstall CartBay later. Deleting CartBay Pro removes the coupons it generated and keeps coupons you created yourself.
 
 ## Troubleshooting
 

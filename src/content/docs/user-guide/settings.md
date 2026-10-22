@@ -35,9 +35,9 @@ Common statuses:
 | Inactive | No active license state is stored locally. |
 | Expired | The license server reported an expired license. |
 | Invalid | The stored key was rejected. |
-| Server Error | The license server was unreachable. CartBay fails open for runtime continuity. |
+| Server Error | The license server was unreachable or gave no usable answer (a network error, an error response, an empty response, or a 429 or 5xx status). CartBay fails open: Pro stays active, nothing is cached as invalid, and Pro does not ask the server again for 15 minutes. |
 
-License checks do not interrupt checkout capture, recovery emails, or restore behavior if the license server is temporarily unavailable.
+License checks do not interrupt checkout capture, recovery emails, or restore behavior if the license server is temporarily unavailable. A real rejection from the license server (expired, invalid, inactive, not activated, or activation limit reached) is cached for 12 hours, and Pro features stop.
 
 #### Current Key
 
@@ -115,7 +115,9 @@ When off:
 
 When on:
 
-- Deleting the plugin removes CartBay settings, campaign settings, sessions, template records, suppression records, scheduled actions, transients, and log entries — plus, if CartBay Pro is installed, its license data and generated coupons.
+- Deleting the plugin removes CartBay settings, campaign settings, sessions, template records, suppression records, scheduled actions, transients, and log entries.
+
+Deleting CartBay Pro removes its license data and the coupons it generated (coupons flagged `_cartbay_generated`, including trashed ones). Coupons you created yourself are kept.
 
 :::danger
 Enable this only when intentionally removing CartBay and its data permanently.
