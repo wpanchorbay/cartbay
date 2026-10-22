@@ -44,7 +44,7 @@ Free session meta keys:
 | `_cartbay_recovered_at`, `_cartbay_recovered_order_id`, `_cartbay_recovered_revenue` | Recovery attribution. |
 | `_cartbay_notifications` | Notification lifecycle records. |
 | `_cartbay_token_hash`, `_cartbay_token_hashes`, `_cartbay_token_expires_at` | Restore token hashes and expiry. |
-| `_cartbay_unsub_token_hash` | Unsubscribe token hash. |
+| `_cartbay_unsub_token_hash` | Unsubscribe token hashes. The key can hold several values, one for each recovery email sent, so earlier links stay valid. |
 
 ### Pro session and coupon meta <span class="cb-badge cb-badge--pro">Pro</span>
 
