@@ -47,7 +47,7 @@ Before diagnosing a specific feature, confirm:
 |---|---|---|
 | No email jobs are scheduled | Email sending is disabled in Recovery Sequence. | Enable the recovery sequence and save the section. |
 | Email sends later than expected | Action Scheduler was delayed by server cron or traffic. | Check scheduled actions and WooCommerce logs with source `cartbay`. |
-| Email step is skipped | Session recovered, suppressed, not abandoned, or step already sent. | Review the Notifications section and the relevant log entries. |
+| Email step is skipped | Session recovered, suppressed, not abandoned, step already sent, or the shopper has since placed an order (logged as `already_ordered`). | Review the Notifications section and the relevant log entries. |
 | Step timing seems reordered | CartBay normalized timing to keep steps in order. | Review the saved Recovery Sequence timing values. |
 
 ## Notification and Email Delivery Problems

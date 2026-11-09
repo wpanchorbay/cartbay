@@ -179,6 +179,19 @@ Attribution priority:
 
 Orders completed before abandonment are recorded separately as `completed_before_abandonment` and are not counted as recovered abandoned revenue.
 
+## Shoppers Who Already Ordered
+
+CartBay does not email a shopper who has already bought. Since 1.1.3:
+
+- If the shopper's email has a processing, completed or on-hold WooCommerce order placed after the cart was captured, the session is not marked abandoned and no recovery emails are scheduled. On-hold covers bank transfer and cheque orders, which wait for payment.
+- Before each recovery email is sent, CartBay checks again. If the address has ordered since, the email is skipped and the reason is written to the log.
+- Only processing and completed orders count as recovered revenue. An on-hold order stops the emails but is not attributed as recovered.
+- After a purchase, the next cart in the same browser starts a fresh session, so it can be recovered on its own.
+
+To change which order statuses count as "ordered", use the `cartbay_ordered_order_statuses` filter (see [Hooks & Jobs](/cartbay/developers/hooks-and-jobs/)).
+
+Requires CartBay 1.1.3 or later.
+
 ## Best Practices
 
 - Start with the default three-step sequence.

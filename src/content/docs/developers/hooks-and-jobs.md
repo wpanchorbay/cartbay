@@ -78,6 +78,7 @@ Known extension filters include:
 | `cartbay_mail_delivery_plugins` | Extend known mail delivery plugin detection. |
 | `cartbay_email_logger_plugins` | Extend known email logger detection. |
 | `cartbay_mail_environment_status` | Override or enrich detected mail environment status. |
+| `cartbay_ordered_order_statuses` | Order statuses (without the `wc-` prefix) that count as "the shopper ordered" and stop recovery emails. Default `processing`, `completed`, `on-hold`. Added in 1.1.3. |
 
 ## Free/Pro Extension Seams
 
