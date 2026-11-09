@@ -42,6 +42,7 @@ Free session meta keys:
 | `_cartbay_cart_snapshot` | Restore-ready cart snapshot. |
 | `_cartbay_captured_at`, `_cartbay_last_activity_at`, `_cartbay_abandoned_at` | Lifecycle timestamps. |
 | `_cartbay_recovered_at`, `_cartbay_recovered_order_id`, `_cartbay_recovered_revenue` | Recovery attribution. |
+| `_cartbay_ordered_order_id` | The order a shopper placed before the session was abandoned. A session with this key is never marked abandoned or emailed, and the next cart starts a new session. Added in 1.1.3. |
 | `_cartbay_notifications` | Notification lifecycle records. |
 | `_cartbay_token_hash`, `_cartbay_token_hashes`, `_cartbay_token_expires_at` | Restore token hashes and expiry. |
 | `_cartbay_unsub_token_hash` | Unsubscribe token hashes. The key can hold several values, one for each recovery email sent, so earlier links stay valid. |
