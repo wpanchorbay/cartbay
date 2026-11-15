@@ -21,7 +21,7 @@ WooCommerce is required. CartBay does not initialize its recovery runtime when W
 
 | Requirement | Recommendation |
 |---|---|
-| WooCommerce | WooCommerce version `10.7` or newer. Tested up to WooCommerce `11.2`. |
+| WooCommerce | WooCommerce version `10.7` or newer. Tested up to WooCommerce `11.3`. |
 | Checkout | Classic checkout or WooCommerce Block Checkout. |
 | Orders | CartBay uses WooCommerce order CRUD APIs and declares HPOS compatibility. |
 | Action Scheduler | Provided by WooCommerce and required for background jobs. |
